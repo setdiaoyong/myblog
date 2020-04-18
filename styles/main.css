@@ -2023,12 +2023,12 @@ body {
     .node-title::before {
       background-color: #555;
     }a {
-      color: #868e96;
+      color: #3b5bdb;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #868e96;
-      border-bottom: 1px solid #868e96;
+      color: #3b5bdb;
+      border-bottom: 1px solid #3b5bdb;
     }a:hover {
       color: #f03e3e;
     }
