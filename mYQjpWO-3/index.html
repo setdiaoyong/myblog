@@ -8,7 +8,7 @@
 <meta name="description" content="大隐于市者，能">
 <meta name="theme-color" content="#000">
 <title>Office 365 team API可无设备，无域名部署，需登录账户调用 | 凤梧山居</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587215041687">
+<link rel="shortcut icon" href="/favicon.ico?v=1587216230027">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
 
@@ -815,7 +815,7 @@ window.addEventListener('load', function() {
   </div>
 </div>
               
-                
+  
 <script src="https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>
 <div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
 <script>
@@ -834,7 +834,7 @@ new Valine({
 });
 </script>
 
-              
+
             </div>
           </div>
         </div>
@@ -1009,6 +1009,36 @@ new Valine({
   // 代码高亮
   hljs.initHighlightingOnLoad();
 
+</script>
+      <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick= () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function(e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px; border: 1px solid #fff; border-radius: 2px;`;
+      lightImg.onclick = function() {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
 </script>
     </div>
   </body>
