@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-18T13:33:50.339Z</updated>
+    <updated>2020-04-18T13:37:45.450Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://blog.xbreeding.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 凤梧山居</rights>
     <entry>
-        <title type="html"><![CDATA[免费空间维持oneindex refresh token长期授权的缓存设置]]></title>
+        <title type="html"><![CDATA[（非专业操作）免费空间维持oneindex 长期授权的缓存设置]]></title>
         <id>https://blog.xbreeding.com/dMbiPACR5/</id>
         <link href="https://blog.xbreeding.com/dMbiPACR5/">
         </link>
