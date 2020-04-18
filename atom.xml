@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.xbreeding.com</id>
+    <title>凤梧山居</title>
+    <updated>2020-04-18T07:31:43.087Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.xbreeding.com"/>
+    <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
+    <subtitle>大隐于市者，能。</subtitle>
+    <logo>https://blog.xbreeding.com/images/avatar.png</logo>
+    <icon>https://blog.xbreeding.com/favicon.ico</icon>
+    <rights>All rights reserved 2020, 凤梧山居</rights>
+    <entry>
+        <title type="html"><![CDATA[免费空间维持oneindex refresh token长期授权的缓存设置]]></title>
+        <id>https://blog.xbreeding.com/dMbiPACR5/</id>
+        <link href="https://blog.xbreeding.com/dMbiPACR5/">
+        </link>
+        <updated>2020-04-17T14:14:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
+<!-- more -->
+<h1 id="问题描述"><strong>问题描述</strong></h1>
+<p>-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台重建缓存，刷新refresh token，才能重新访问onedrive。<br>
+部署网址：http://onebio.gearhostpreview.com/?/software/</p>
+<p>-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。</p>
+<h1 id="在后台瞎设置"><strong>在后台瞎设置</strong></h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Office 365 team API可无设备，无域名部署，需登录账户调用]]></title>
+        <id>https://blog.xbreeding.com/mYQjpWO-3/</id>
+        <link href="https://blog.xbreeding.com/mYQjpWO-3/">
+        </link>
+        <updated>2020-04-17T00:39:54.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong></p>
+<!-- more -->
+<h1 id="特别致谢">特别致谢</h1>
+<p>-（1）感谢 <a href="https://blog.curlc.com/archives/687.html">浅忆博客</a></p>
+<p>-（2）感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong></p>
+<p><a href="https://jq.qq.com/?_wv=1027&amp;k=52yJp9C">点击此加入群聊【E5技术交流群】</a></p>
+<h1 id="成功示例">成功示例</h1>
+<p>-（1）github+render部署：https://teamstudy.onrender.com/</p>
+<p>-（2）自己空间域名上传静态文件部署coding.net：https://h0hyvx.coding-pages.com</p>
+<h1 id="特别说明">特别说明</h1>
+<p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
+<p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
+<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为https://localhost:3000/，不然可能退出后跳转报错。</p>
+<p>-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。</p>
+<p>-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。</p>
+<h1 id="前期基础">前期基础</h1>
+<p>（1）参考 <strong>浅忆博客</strong>：<a href="https://blog.curlc.com/archives/599.html">新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)</a>。申请office 365 开发者订阅。</p>
+<p>（2）参考 <strong>啊哈程序</strong>：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。</p>
+<h1 id="部署技术路线">部署技术路线</h1>
+<h2 id="1githubrender简单可在线修改升级">（1）github+render（简单，可在线修改升级）。</h2>
+<p><strong>github拉取officedev官方源码，修改成自己授权的ID，render在线编译部署网页</strong></p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 拉取官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID；</p>
+</li>
+<li>
+<p>c、 用自己github账号注册<a href="https://render.com/">render</a>；</p>
+</li>
+<li>
+<p>d、 在render中拉取自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。</p>
+</li>
+</ul>
+<h2 id="2githubgithub-page最简单需替换升级">（2）github+github page（最简单，需替换升级）</h2>
+<p><strong>github拉取博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。</strong></p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 拉取博主编译好的静态网页的存储库，网址为：https://github.com/setdiaoyong/teamAPI，按照说明，修改成自己授权应用ID；</p>
+</li>
+<li>
+<p>c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；</p>
+</li>
+</ul>
+<h2 id="3自有空间域名部署要求高需替换升级">（3）自有空间域名部署（要求高，需替换升级）</h2>
+<p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页文件，修改成自己授权的应用ID，自行部署</strong><br>
+（推荐https://coding.net，提供免费空间，和https访问，但是需要实名认证，不喜勿用。）</p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 下载网址为：https://github.com/setdiaoyong/teamAPI，点击绿色下载按钮，下载zip；</p>
+</li>
+<li>
+<p>c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。</p>
+</li>
+</ul>
+<h1 id="设置应用授权">设置应用授权</h1>
+<p>参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）</p>
+<p>个人设置截图如下：</p>
+<p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用<br>
+<img src="https://blog.xbreeding.com/post-images/1587086835316.png" alt="" loading="lazy"></p>
+<ul>
+<li>a、 起名，授权登录用户类型，跳转地址Redirect URIs（http后s最好加）</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587086887866.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、Redirect URIs中设置https://localhost:3000/（http后s最好加）及自己部署https网址（必须https），Logout URL：https://localhost:3000/（http后必须加s），勾选隐式授权access token，ID token。</li>
+</ul>
+<p><img src="https://blog.xbreeding.com/post-images/1587086915551.png" alt="" loading="lazy"><br>
+源代码中有退出跳转网址路径<br>
+<img src="https://blog.xbreeding.com/post-images/1587087829180.png" alt="" loading="lazy"></p>
+<ul>
+<li>c、复制应用ID，待用，进入API授权设置</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://blog.xbreeding.com/post-images/1587086943633.png" alt="" loading="lazy"></figure>
+<ul>
+<li>d、设置用户调用api，搜索online，选择readwrite权限</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://blog.xbreeding.com/post-images/1587087016393.png" alt="" loading="lazy"></figure>
+<ul>
+<li>e、根据个人使用账户权限，可能要管理员授权使用该API，可以在右上角切换管理员账户，</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="https://blog.xbreeding.com/post-images/1587087033373.png" alt="" loading="lazy"></figure>
+<ul>
+<li>f、点击进行管理员授权</li>
+</ul>
+<p><img src="https://blog.xbreeding.com/post-images/1587087047023.png" alt="" loading="lazy"><br>
+-（额外提示）一个ID可以对应多个自己部署的https:域名，在web （经群友<strong>别恋</strong>验证）</p>
+<figure data-type="image" tabindex="5"><img src="https://blog.xbreeding.com/post-images/1587087067227.png" alt="" loading="lazy"></figure>
+<h1 id="网页部署">网页部署</h1>
+<h2 id="1githubrender在线编译部署">（1）github+render在线编译部署</h2>
+<ul>
+<li>a、 拉取官方项目库</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://blog.xbreeding.com/post-images/1587087158259.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、 找到文件，点击修改， 修改成自己的应用ID<br>
+<img src="https://blog.xbreeding.com/post-images/1587095993662.png" alt="" loading="lazy"></li>
+</ul>
+<figure data-type="image" tabindex="7"><img src="https://blog.xbreeding.com/post-images/1587087385884.png" alt="" loading="lazy"></figure>
+<ul>
+<li>c、 用拉取的github账号登录render, 创建web空间，选择修改好应用ID的自己github库</li>
+</ul>
+<figure data-type="image" tabindex="8"><img src="https://blog.xbreeding.com/post-images/1587087523215.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://blog.xbreeding.com/post-images/1587087458844.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>d、 自动识别项目，填写名称，该名称就是给出网址的二级域名，其他无需更改，直接点击确认。<br>
+<img src="https://blog.xbreeding.com/post-images/1587096508631.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>e、部署成功后，就给出访问网址，填写到之前应用授权处。</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="10"><img src="https://blog.xbreeding.com/post-images/1587087616891.png" alt="" loading="lazy"></figure>
+<h2 id="2githubgithub-page部署">（2）github+github Page部署</h2>
+<ul>
+<li>a、拉取博主github上传编译好的网页文件：网址为：github.com/setdiaoyong/setdiaoyong.github.io (手动复制到浏览器）</li>
+</ul>
+<figure data-type="image" tabindex="11"><img src="https://blog.xbreeding.com/post-images/1587087673518.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>b、在github网页中打开static\js，分别搜索main.b09a1c35.chunk.js和main.b09a1c35.chunk.js.map ，打开后，点击右上角笔图标，进行编辑，分别搜索 {授权appID} ，将 {授权appID}  连 {}挂号 一起替换成至自己设置好的app ID<br>
+<img src="https://blog.xbreeding.com/post-images/1587087271380.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>c、修改库名为：自己github用户名.github.io</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="12"><img src="https://blog.xbreeding.com/post-images/1587087703757.png" alt="" loading="lazy"></figure>
+<ul>
+<li>d、修改好，滚动本页到下方，可以看到，访问地址，即可访问</li>
+</ul>
+<figure data-type="image" tabindex="13"><img src="https://blog.xbreeding.com/post-images/1587087873568.png" alt="" loading="lazy"></figure>
+<p>##（3）自由空间域名部署及设置参照github page部署方法</p>
+<h1 id="访问网页">访问网页</h1>
+<ul>
+<li>a、访问部署成功的网址</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="https://blog.xbreeding.com/post-images/1587087924283.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、登录账户，不报错，不闪退，跳转进入如下界面</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="https://blog.xbreeding.com/post-images/1587087952044.png" alt="" loading="lazy"></figure>
+<ul>
+<li>c、创建一个meeting，此次省略截图，完成调用，也继续可跳转到web端的team视频会议软件体验一下</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="https://blog.xbreeding.com/post-images/1587088091091.png" alt="" loading="lazy"></figure>
+<h1 id="问题解决">问题解决</h1>
+<ul>
+<li>a、关键是授权设置，注意用设置登录类型范围内的账户登录，</li>
+<li>b、如果登录报错，要看具体错误类型，再回去修改授权，未设置好Redirect URIs，会提示Redirect URIs不符合</li>
+<li>c、如果登录闪退，隐式授权access token 和ID token 未勾选</li>
+</ul>
+<p>注：感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong> 提供了反馈。</p>
+<h1 id="邀请他人注册调用的授权设置暂时办法">邀请他人注册调用的授权设置（暂时办法）</h1>
+<ul>
+<li>a、子账号登录他人部署的应用，会报出需要管理员授权<br>
+<img src="https://blog.xbreeding.com/post-images/1587091316482.png" alt="" loading="lazy"></li>
+<li>b、可以从要登录应用跳转的微软sigin in界面复制网址来提取登录应用id和redirect_uri：<br>
+<img src="https://blog.xbreeding.com/post-images/1587086688972.png" alt="提取信息" loading="lazy"></li>
+<li>c、将提取的应用id和redirect_uri替换以下网址的部分：login.microsoftonline.com/common/adminconsent?client_id=要登录的应用ID&amp;redirect_uri=要登录应用的跳转地址</li>
+<li>d、 将替换好的网址复制到浏览器 .<br>
+参见<a href="https://docs.microsoft.com/zh-CN/microsoft-365/admin/add-users/about-admin-roles?WT.mc_id=365AdminCSH&amp;view=o365-worldwide">官方文档1</a>，<a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant" title="官方文档2">官方文档2</a>、<a href="https://docs.microsoft.com/zh-cn/graph/permissions-reference" title="官方文档3">官方文档3</a>、<a href="https://docs.microsoft.com/zh-cn/graph/auth-cloudsolutionprovider" title="官方文档4*">官方文档4*</a></li>
+<li>e、修改好，用管理员账号登录，接受应用需要的授权，然后在azure中修改：<br>
+<img src="https://blog.xbreeding.com/post-images/1587092151066.png" alt="" loading="lazy"></li>
+<li>f、打开组织应用<br>
+<img src="https://blog.xbreeding.com/post-images/1587092143391.png" alt="" loading="lazy"></li>
+<li>g、打开所有应用，搜索之前记录的他人应用名<br>
+<img src="https://blog.xbreeding.com/post-images/1587092163163.png" alt="" loading="lazy"></li>
+<li>h、以自己部署的为例，需要更换为在所有应用中搜索，我部署的应用名为teamstudy。<br>
+<img src="https://blog.xbreeding.com/post-images/1587092135736.png" alt="" loading="lazy"></li>
+<li>i、点击添加用户，此处已有的一个用户为管理员<br>
+<img src="https://blog.xbreeding.com/post-images/1587092113693.png" alt="" loading="lazy"></li>
+<li>j、添加允许登录的子账号<br>
+<img src="https://blog.xbreeding.com/post-images/1587092106702.png" alt="" loading="lazy"></li>
+<li>k、删除管理员授权，保证安全<br>
+<img src="https://blog.xbreeding.com/post-images/1587092099707.png" alt="" loading="lazy"></li>
+</ul>
+<h1 id="未来计划">未来计划</h1>
+<p><strong>（1）周期性定时邮件及自动回复维持子账号活跃度</strong></p>
+<p><strong>（2）微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://blog.xbreeding.com/hello-gridea/</id>
+        <link href="https://blog.xbreeding.com/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>

@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="大隐于市者，能。">
+<meta name="theme-color" content="#000">
+<title>Office 365 team API可无设备，无域名部署，需登录账户调用 | 凤梧山居</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1587194365245">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/pisces.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css" rel="stylesheet">  
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163842540-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163842540-1');
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?8483238d846a0429122f3728e9c4b441";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    <meta name="description" content="Office 365 team API可无设备，无域名部署，需登录账户调用" />
+    <meta name="keywords" content="office365 API 保活" />
+  </head>
+  <body>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      
+<div class=" pisces">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>凤梧山居</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">精于心，简于形</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends" target="_self">
+                  
+                    fa-plane友情链接
+                  
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+    </div>
+    <div class="main-continer">
+      
+      <div class="section-layout pisces ">
+        <div class="section-layout-wrapper">
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">凤梧山居</p>
+    <p class="site-description right-motion">大隐于市者，能。</p>
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">3</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">2</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://blog.xbreeding.com/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://github.com/setdiaoyong">
+              <i class="fa fa-github-alt" title="GitHub"></i>
+            </a>
+          
+            <a href="http://openshare.xbreeding.com/">
+              <i class="fa fa-cloud-download" title="分享盘"></i>
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
+
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E7%89%B9%E5%88%AB%E8%87%B4%E8%B0%A2">特别致谢</a></li>
+<li><a href="#%E6%88%90%E5%8A%9F%E7%A4%BA%E4%BE%8B">成功示例</a></li>
+<li><a href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E">特别说明</a></li>
+<li><a href="#%E5%89%8D%E6%9C%9F%E5%9F%BA%E7%A1%80">前期基础</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF">部署技术路线</a>
+<ul>
+<li><a href="#1githubrender%E7%AE%80%E5%8D%95%E5%8F%AF%E5%9C%A8%E7%BA%BF%E4%BF%AE%E6%94%B9%E5%8D%87%E7%BA%A7">（1）github+render（简单，可在线修改升级）。</a></li>
+<li><a href="#2githubgithub-page%E6%9C%80%E7%AE%80%E5%8D%95%E9%9C%80%E6%9B%BF%E6%8D%A2%E5%8D%87%E7%BA%A7">（2）github+github page（最简单，需替换升级）</a></li>
+<li><a href="#3%E8%87%AA%E6%9C%89%E7%A9%BA%E9%97%B4%E5%9F%9F%E5%90%8D%E9%83%A8%E7%BD%B2%E8%A6%81%E6%B1%82%E9%AB%98%E9%9C%80%E6%9B%BF%E6%8D%A2%E5%8D%87%E7%BA%A7">（3）自有空间域名部署（要求高，需替换升级）</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E5%BA%94%E7%94%A8%E6%8E%88%E6%9D%83">设置应用授权</a></li>
+<li><a href="#%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2">网页部署</a>
+<ul>
+<li><a href="#1githubrender%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%AF%91%E9%83%A8%E7%BD%B2">（1）github+render在线编译部署</a></li>
+<li><a href="#2githubgithub-page%E9%83%A8%E7%BD%B2">（2）github+github Page部署</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BF%E9%97%AE%E7%BD%91%E9%A1%B5">访问网页</a></li>
+<li><a href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">问题解决</a></li>
+<li><a href="#%E9%82%80%E8%AF%B7%E4%BB%96%E4%BA%BA%E6%B3%A8%E5%86%8C%E8%B0%83%E7%94%A8%E7%9A%84%E6%8E%88%E6%9D%83%E8%AE%BE%E7%BD%AE%E6%9A%82%E6%97%B6%E5%8A%9E%E6%B3%95">邀请他人注册调用的授权设置（暂时办法）</a></li>
+<li><a href="#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92">未来计划</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+      lList.push(elem);
+    }
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+
+(function() {
+  // 处理不是从#一级标题开始目录
+  if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+    let con = tocContent.children[0].children[0];
+    tocContent.innerHTML = con.innerHTML;
+  }
+  let markdownItTOC = document.querySelector('.markdownIt-TOC');
+  let innerHeight = window.innerHeight;
+  markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+  addTocNumber(tocContent, '');
+})();
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop + 10;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://blog.xbreeding.com/mYQjpWO-3/">
+      Office 365 team API可无设备，无域名部署，需登录账户调用
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-04-17</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://blog.xbreeding.com/t71kEAhYi/">
+              <span>office365 API 保活</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>8分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>1904<span class="pc-show">字数</span></span>
+    </span>
+    
+      <span id="/postundefined" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
+      </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p><strong>拜请诸方大佬，各显神通，有缘续订</strong></p>
+<!-- more -->
+<h1 id="特别致谢">特别致谢</h1>
+<p>-（1）感谢 <a href="https://blog.curlc.com/archives/687.html">浅忆博客</a></p>
+<p>-（2）感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong></p>
+<p><a href="https://jq.qq.com/?_wv=1027&amp;k=52yJp9C">点击此加入群聊【E5技术交流群】</a></p>
+<h1 id="成功示例">成功示例</h1>
+<p>-（1）github+render部署：https://teamstudy.onrender.com/</p>
+<p>-（2）自己空间域名上传静态文件部署coding.net：https://h0hyvx.coding-pages.com</p>
+<h1 id="特别说明">特别说明</h1>
+<p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
+<p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
+<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为https://localhost:3000/，不然可能退出后跳转报错。</p>
+<p>-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。</p>
+<p>-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。</p>
+<h1 id="前期基础">前期基础</h1>
+<p>（1）参考 <strong>浅忆博客</strong>：<a href="https://blog.curlc.com/archives/599.html">新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)</a>。申请office 365 开发者订阅。</p>
+<p>（2）参考 <strong>啊哈程序</strong>：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。</p>
+<h1 id="部署技术路线">部署技术路线</h1>
+<h2 id="1githubrender简单可在线修改升级">（1）github+render（简单，可在线修改升级）。</h2>
+<p><strong>github拉取officedev官方源码，修改成自己授权的ID，render在线编译部署网页</strong></p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 拉取官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID；</p>
+</li>
+<li>
+<p>c、 用自己github账号注册<a href="https://render.com/">render</a>；</p>
+</li>
+<li>
+<p>d、 在render中拉取自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。</p>
+</li>
+</ul>
+<h2 id="2githubgithub-page最简单需替换升级">（2）github+github page（最简单，需替换升级）</h2>
+<p><strong>github拉取博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。</strong></p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 拉取博主编译好的静态网页的存储库，网址为：https://github.com/setdiaoyong/teamAPI，按照说明，修改成自己授权应用ID；</p>
+</li>
+<li>
+<p>c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；</p>
+</li>
+</ul>
+<h2 id="3自有空间域名部署要求高需替换升级">（3）自有空间域名部署（要求高，需替换升级）</h2>
+<p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页文件，修改成自己授权的应用ID，自行部署</strong><br>
+（推荐https://coding.net，提供免费空间，和https访问，但是需要实名认证，不喜勿用。）</p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 下载网址为：https://github.com/setdiaoyong/teamAPI，点击绿色下载按钮，下载zip；</p>
+</li>
+<li>
+<p>c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。</p>
+</li>
+</ul>
+<h1 id="设置应用授权">设置应用授权</h1>
+<p>参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）</p>
+<p>个人设置截图如下：</p>
+<p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用<br>
+<img src="https://blog.xbreeding.com/post-images/1587086835316.png" alt="" loading="lazy"></p>
+<ul>
+<li>a、 起名，授权登录用户类型，跳转地址Redirect URIs（http后s最好加）</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587086887866.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、Redirect URIs中设置https://localhost:3000/（http后s最好加）及自己部署https网址（必须https），Logout URL：https://localhost:3000/（http后必须加s），勾选隐式授权access token，ID token。</li>
+</ul>
+<p><img src="https://blog.xbreeding.com/post-images/1587086915551.png" alt="" loading="lazy"><br>
+源代码中有退出跳转网址路径<br>
+<img src="https://blog.xbreeding.com/post-images/1587087829180.png" alt="" loading="lazy"></p>
+<ul>
+<li>c、复制应用ID，待用，进入API授权设置</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://blog.xbreeding.com/post-images/1587086943633.png" alt="" loading="lazy"></figure>
+<ul>
+<li>d、设置用户调用api，搜索online，选择readwrite权限</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://blog.xbreeding.com/post-images/1587087016393.png" alt="" loading="lazy"></figure>
+<ul>
+<li>e、根据个人使用账户权限，可能要管理员授权使用该API，可以在右上角切换管理员账户，</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="https://blog.xbreeding.com/post-images/1587087033373.png" alt="" loading="lazy"></figure>
+<ul>
+<li>f、点击进行管理员授权</li>
+</ul>
+<p><img src="https://blog.xbreeding.com/post-images/1587087047023.png" alt="" loading="lazy"><br>
+-（额外提示）一个ID可以对应多个自己部署的https:域名，在web （经群友<strong>别恋</strong>验证）</p>
+<figure data-type="image" tabindex="5"><img src="https://blog.xbreeding.com/post-images/1587087067227.png" alt="" loading="lazy"></figure>
+<h1 id="网页部署">网页部署</h1>
+<h2 id="1githubrender在线编译部署">（1）github+render在线编译部署</h2>
+<ul>
+<li>a、 拉取官方项目库</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://blog.xbreeding.com/post-images/1587087158259.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、 找到文件，点击修改， 修改成自己的应用ID<br>
+<img src="https://blog.xbreeding.com/post-images/1587095993662.png" alt="" loading="lazy"></li>
+</ul>
+<figure data-type="image" tabindex="7"><img src="https://blog.xbreeding.com/post-images/1587087385884.png" alt="" loading="lazy"></figure>
+<ul>
+<li>c、 用拉取的github账号登录render, 创建web空间，选择修改好应用ID的自己github库</li>
+</ul>
+<figure data-type="image" tabindex="8"><img src="https://blog.xbreeding.com/post-images/1587087523215.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://blog.xbreeding.com/post-images/1587087458844.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>d、 自动识别项目，填写名称，该名称就是给出网址的二级域名，其他无需更改，直接点击确认。<br>
+<img src="https://blog.xbreeding.com/post-images/1587096508631.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>e、部署成功后，就给出访问网址，填写到之前应用授权处。</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="10"><img src="https://blog.xbreeding.com/post-images/1587087616891.png" alt="" loading="lazy"></figure>
+<h2 id="2githubgithub-page部署">（2）github+github Page部署</h2>
+<ul>
+<li>a、拉取博主github上传编译好的网页文件：网址为：github.com/setdiaoyong/setdiaoyong.github.io (手动复制到浏览器）</li>
+</ul>
+<figure data-type="image" tabindex="11"><img src="https://blog.xbreeding.com/post-images/1587087673518.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>b、在github网页中打开static\js，分别搜索main.b09a1c35.chunk.js和main.b09a1c35.chunk.js.map ，打开后，点击右上角笔图标，进行编辑，分别搜索 {授权appID} ，将 {授权appID}  连 {}挂号 一起替换成至自己设置好的app ID<br>
+<img src="https://blog.xbreeding.com/post-images/1587087271380.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>c、修改库名为：自己github用户名.github.io</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="12"><img src="https://blog.xbreeding.com/post-images/1587087703757.png" alt="" loading="lazy"></figure>
+<ul>
+<li>d、修改好，滚动本页到下方，可以看到，访问地址，即可访问</li>
+</ul>
+<figure data-type="image" tabindex="13"><img src="https://blog.xbreeding.com/post-images/1587087873568.png" alt="" loading="lazy"></figure>
+<p>##（3）自由空间域名部署及设置参照github page部署方法</p>
+<h1 id="访问网页">访问网页</h1>
+<ul>
+<li>a、访问部署成功的网址</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="https://blog.xbreeding.com/post-images/1587087924283.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、登录账户，不报错，不闪退，跳转进入如下界面</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="https://blog.xbreeding.com/post-images/1587087952044.png" alt="" loading="lazy"></figure>
+<ul>
+<li>c、创建一个meeting，此次省略截图，完成调用，也继续可跳转到web端的team视频会议软件体验一下</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="https://blog.xbreeding.com/post-images/1587088091091.png" alt="" loading="lazy"></figure>
+<h1 id="问题解决">问题解决</h1>
+<ul>
+<li>a、关键是授权设置，注意用设置登录类型范围内的账户登录，</li>
+<li>b、如果登录报错，要看具体错误类型，再回去修改授权，未设置好Redirect URIs，会提示Redirect URIs不符合</li>
+<li>c、如果登录闪退，隐式授权access token 和ID token 未勾选</li>
+</ul>
+<p>注：感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong> 提供了反馈。</p>
+<h1 id="邀请他人注册调用的授权设置暂时办法">邀请他人注册调用的授权设置（暂时办法）</h1>
+<ul>
+<li>a、子账号登录他人部署的应用，会报出需要管理员授权<br>
+<img src="https://blog.xbreeding.com/post-images/1587091316482.png" alt="" loading="lazy"></li>
+<li>b、可以从要登录应用跳转的微软sigin in界面复制网址来提取登录应用id和redirect_uri：<br>
+<img src="https://blog.xbreeding.com/post-images/1587086688972.png" alt="提取信息" loading="lazy"></li>
+<li>c、将提取的应用id和redirect_uri替换以下网址的部分：login.microsoftonline.com/common/adminconsent?client_id=要登录的应用ID&amp;redirect_uri=要登录应用的跳转地址</li>
+<li>d、 将替换好的网址复制到浏览器 .<br>
+参见<a href="https://docs.microsoft.com/zh-CN/microsoft-365/admin/add-users/about-admin-roles?WT.mc_id=365AdminCSH&amp;view=o365-worldwide">官方文档1</a>，<a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant" title="官方文档2">官方文档2</a>、<a href="https://docs.microsoft.com/zh-cn/graph/permissions-reference" title="官方文档3">官方文档3</a>、<a href="https://docs.microsoft.com/zh-cn/graph/auth-cloudsolutionprovider" title="官方文档4*">官方文档4*</a></li>
+<li>e、修改好，用管理员账号登录，接受应用需要的授权，然后在azure中修改：<br>
+<img src="https://blog.xbreeding.com/post-images/1587092151066.png" alt="" loading="lazy"></li>
+<li>f、打开组织应用<br>
+<img src="https://blog.xbreeding.com/post-images/1587092143391.png" alt="" loading="lazy"></li>
+<li>g、打开所有应用，搜索之前记录的他人应用名<br>
+<img src="https://blog.xbreeding.com/post-images/1587092163163.png" alt="" loading="lazy"></li>
+<li>h、以自己部署的为例，需要更换为在所有应用中搜索，我部署的应用名为teamstudy。<br>
+<img src="https://blog.xbreeding.com/post-images/1587092135736.png" alt="" loading="lazy"></li>
+<li>i、点击添加用户，此处已有的一个用户为管理员<br>
+<img src="https://blog.xbreeding.com/post-images/1587092113693.png" alt="" loading="lazy"></li>
+<li>j、添加允许登录的子账号<br>
+<img src="https://blog.xbreeding.com/post-images/1587092106702.png" alt="" loading="lazy"></li>
+<li>k、删除管理员授权，保证安全<br>
+<img src="https://blog.xbreeding.com/post-images/1587092099707.png" alt="" loading="lazy"></li>
+</ul>
+<h1 id="未来计划">未来计划</h1>
+<p><strong>（1）周期性定时邮件及自动回复维持子账号活跃度</strong></p>
+<p><strong>（2）微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      凤梧山居
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.xbreeding.com/mYQjpWO-3/" title="Office 365 team API可无设备，无域名部署，需登录账户调用">Office 365 team API可无设备，无域名部署，需登录账户调用</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://blog.xbreeding.com/t71kEAhYi/"># office365 API 保活</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="免费空间维持oneindex refresh token长期授权的缓存设置" href="https://blog.xbreeding.com/dMbiPACR5/">免费空间维持oneindex refresh token长期授权的缓存设置</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="免费空间维持oneindex refresh token长期授权的缓存设置" href="https://blog.xbreeding.com/dMbiPACR5/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="Hello Gridea" href="https://blog.xbreeding.com/hello-gridea/">Hello Gridea</a>
+        <a class="nav-mobile-next" title="Hello Gridea" href="https://blog.xbreeding.com/hello-gridea/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+              
+                
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+<script>
+new Valine({
+    el: '#vcomments' ,
+    appId: 'nJORPSLvvCqPfrMlo68UuVG5-9Nh9j0Va',
+    appKey: 'TRw51kJ6vmrCYwVGAWTimnwl',
+    notify: 'true' === 'true', 
+    avatar:'wavatar', 
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+});
+</script>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="pisces back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+    <div class="bg-img">
+      <img src="/media/images/1.jpg" />
+    </div>
+  
+  
+  
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <div class="aplayer" id="aplayer"></div>
+  <input hidden id="player_cover" value="" />
+  <div class="music-list">
+  
+    
+    <input hidden value="我曾,隔壁老樊,http://openshare.xbreeding.com/?/%E9%9A%94%E5%A3%81%E8%80%81%E6%A8%8A%20-%20%E6%88%91%E6%9B%BE.mp3," />
+  
+  </div>
+  <script>
+  let musics = document.querySelector('.music-list').children;
+  let mediaMusic = [];
+  let cover = document.querySelector('#player_cover').value;
+  for (let i = 0; i < musics.length; i++) {
+    let item = musics[i];
+    let splits = item.value.split(',');
+    mediaMusic.push({
+      name: splits[0],
+      artist: splits[1],
+      url: splits[2],
+      lrc: splits[3],
+      cover: cover
+    });
+  }
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      lrcType: 3,
+      listFolded: false,
+      listMaxHeight: 90,
+      audio: mediaMusic
+  });
+  </script>
+
+
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'true'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target","_blank");
+      }
+    })
+  }
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+    </div>
+  </body>
+  <script src="/media/js/motion.js"></script>
+</html>
