@@ -8,7 +8,7 @@
 <meta name="description" content="大隐于市者，能">
 <meta name="theme-color" content="#000">
 <title>凤梧山居</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587197121595">
+<link rel="shortcut icon" href="/favicon.ico?v=1587202389930">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
 
@@ -423,44 +423,6 @@ var _hmt = _hmt || [];
     </div>
   
   
-  
-    
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <div class="aplayer" id="aplayer"></div>
-  <input hidden id="player_cover" value="" />
-  <div class="music-list">
-  
-    
-    <input hidden value="我曾,隔壁老樊,http://openshare.xbreeding.com/?/%E9%9A%94%E5%A3%81%E8%80%81%E6%A8%8A%20-%20%E6%88%91%E6%9B%BE.mp3," />
-  
-  </div>
-  <script>
-  let musics = document.querySelector('.music-list').children;
-  let mediaMusic = [];
-  let cover = document.querySelector('#player_cover').value;
-  for (let i = 0; i < musics.length; i++) {
-    let item = musics[i];
-    let splits = item.value.split(',');
-    mediaMusic.push({
-      name: splits[0],
-      artist: splits[1],
-      url: splits[2],
-      lrc: splits[3],
-      cover: cover
-    });
-  }
-  const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      lrcType: 3,
-      listFolded: false,
-      listMaxHeight: 90,
-      audio: mediaMusic
-  });
-  </script>
-
-
   
 </div>
 <script>
