@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-18T12:22:55.446Z</updated>
+    <updated>2020-04-18T12:28:50.121Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -11,21 +11,21 @@
     <icon>https://blog.xbreeding.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 凤梧山居</rights>
     <entry>
-        <title type="html"><![CDATA[testvaline]]></title>
-        <id>https://blog.xbreeding.com/0LJdP6V4i/</id>
-        <link href="https://blog.xbreeding.com/0LJdP6V4i/">
+        <title type="html"><![CDATA[免费空间维持oneindex refresh token长期授权的缓存设置]]></title>
+        <id>https://blog.xbreeding.com/dMbiPACR5/</id>
+        <link href="https://blog.xbreeding.com/dMbiPACR5/">
         </link>
-        <updated>2020-04-18T11:23:54.000Z</updated>
-        <content type="html"><![CDATA[<p>testvaline</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[web]]></title>
-        <id>https://blog.xbreeding.com/KjMIUziJn/</id>
-        <link href="https://blog.xbreeding.com/KjMIUziJn/">
-        </link>
-        <updated>2020-04-18T11:11:07.000Z</updated>
-        <content type="html"><![CDATA[<p>sss</p>
+        <updated>2020-04-17T14:14:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
+<!-- more -->
+<h1 id="问题描述"><strong>问题描述</strong></h1>
+<p>-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台重建缓存，刷新refresh token，才能重新访问onedrive。<br>
+部署网址：http://onebio.gearhostpreview.com/?/software/</p>
+<p>-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。</p>
+<h1 id="在后台瞎设置"><strong>在后台瞎设置</strong></h1>
+<figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587212919814.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>

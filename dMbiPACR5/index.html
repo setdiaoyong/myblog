@@ -8,7 +8,7 @@
 <meta name="description" content="大隐于市者，能">
 <meta name="theme-color" content="#000">
 <title>免费空间维持oneindex refresh token长期授权的缓存设置 | 凤梧山居</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587197075467">
+<link rel="shortcut icon" href="/favicon.ico?v=1587212923690">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
 
@@ -134,7 +134,7 @@ var _hmt = _hmt || [];
           
             
               <li class="nav-item ">
-                <a href="/friends" target="_self">
+                <a href="/friends" target="_blank">
                   
                     🔱友情链接
                   
@@ -560,6 +560,7 @@ window.addEventListener('load', function() {
 部署网址：http://onebio.gearhostpreview.com/?/software/</p>
 <p>-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。</p>
 <h1 id="在后台瞎设置"><strong>在后台瞎设置</strong></h1>
+<figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587212919814.png" alt="" loading="lazy"></figure>
 
               </div>
               <div class="post-footer">
@@ -595,15 +596,15 @@ window.addEventListener('load', function() {
 </div>
               
                 
-<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>
 <div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
 <script>
 new Valine({
     el: '#vcomments' ,
     appId: 'nJORPSLvvCqPfrMlo68UuVG5-9Nh9j0Va',
     appKey: 'TRw51kJ6vmrCYwVGAWTimnwl',
-    notify: 'true' === 'true', 
-    avatar:'wavatar', 
+    notify: 'true' === 'true',
+    avatar:'wavatar',
     placeholder: '',
     pageSize: '',
     lang: 'zh-cn',
@@ -612,6 +613,7 @@ new Valine({
     avatarForce: 'true' === 'false',
 });
 </script>
+
               
             </div>
           </div>
@@ -642,44 +644,6 @@ new Valine({
     </div>
   
   
-  
-    
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <div class="aplayer" id="aplayer"></div>
-  <input hidden id="player_cover" value="" />
-  <div class="music-list">
-  
-    
-    <input hidden value="我曾,隔壁老樊,http://openshare.xbreeding.com/?/%E9%9A%94%E5%A3%81%E8%80%81%E6%A8%8A%20-%20%E6%88%91%E6%9B%BE.mp3," />
-  
-  </div>
-  <script>
-  let musics = document.querySelector('.music-list').children;
-  let mediaMusic = [];
-  let cover = document.querySelector('#player_cover').value;
-  for (let i = 0; i < musics.length; i++) {
-    let item = musics[i];
-    let splits = item.value.split(',');
-    mediaMusic.push({
-      name: splits[0],
-      artist: splits[1],
-      url: splits[2],
-      lrc: splits[3],
-      cover: cover
-    });
-  }
-  const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      lrcType: 3,
-      listFolded: false,
-      listMaxHeight: 90,
-      audio: mediaMusic
-  });
-  </script>
-
-
   
 </div>
 <script>
