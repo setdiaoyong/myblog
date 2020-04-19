@@ -8,7 +8,7 @@
 <meta name="description" content="大隐于市者，能">
 <meta name="theme-color" content="#000">
 <title>Office 365 team API可无设备，无域名部署，需登录账户调用 | 凤梧山居</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587283715965">
+<link rel="shortcut icon" href="/favicon.ico?v=1587286017626">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
 
@@ -275,7 +275,12 @@ var _hmt = _hmt || [];
 </li>
 <li><a href="#%E8%AE%BF%E9%97%AE%E7%BD%91%E9%A1%B5">访问网页</a></li>
 <li><a href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3">问题解决</a></li>
-<li><a href="#%E9%82%80%E8%AF%B7%E4%BB%96%E4%BA%BA%E6%B3%A8%E5%86%8C%E8%B0%83%E7%94%A8%E7%9A%84%E6%8E%88%E6%9D%83%E8%AE%BE%E7%BD%AE%E6%9A%82%E6%97%B6%E5%8A%9E%E6%B3%95">邀请他人注册调用的授权设置（暂时办法）</a></li>
+<li><a href="#%E9%82%80%E8%AF%B7%E4%BB%96%E4%BA%BA%E6%B3%A8%E5%86%8C%E8%B0%83%E7%94%A8%E7%9A%84%E6%8E%88%E6%9D%83%E8%AE%BE%E7%BD%AE">邀请他人注册调用的授权设置</a>
+<ul>
+<li><a href="#1%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%89%B9%E5%AE%9A%E7%BD%91%E5%9D%80%E6%8E%88%E6%9D%83%E6%9A%82%E6%97%B6%E5%8A%9E%E6%B3%95">1.管理员登录特定网址授权（暂时办法）</a></li>
+<li><a href="#2%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%AD%E5%BF%83%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E7%94%A8%E6%88%B7%E8%AF%B7%E6%B1%82%E6%8E%88%E6%9D%83%E5%AE%98%E6%96%B9preview">2.管理员中心设置允许用户请求授权（官方preview）</a></li>
+</ul>
+</li>
 <li><a href="#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92">未来计划</a></li>
 </ul>
 
@@ -574,7 +579,7 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1918<span class="pc-show">字数</span></span>
+      <span>1962<span class="pc-show">字数</span></span>
     </span>
     
       <span id="/postundefined" class="meta-item pc-show leancloud_visitors">
@@ -594,8 +599,8 @@ window.addEventListener('load', function() {
 <p>-（2）感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong></p>
 <p><a href="https://jq.qq.com/?_wv=1027&amp;k=52yJp9C">点击此加入群聊【E5技术交流群】</a></p>
 <h1 id="成功示例">成功示例</h1>
-<p>-（1）github+render部署：https://teamstudy.onrender.com/</p>
-<p>-（2）自己空间域名上传静态文件部署coding.net：https://h0hyvx.coding-pages.com</p>
+<p>-（1）github+render部署：<a href="https://teamstudy.onrender.com/">https://teamstudy.onrender.com/</a></p>
+<p>-（2）自己空间域名上传静态文件部署coding.net：<a href="https://h0hyvx.coding-pages.com">https://h0hyvx.coding-pages.com</a></p>
 <h1 id="特别说明">特别说明</h1>
 <p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
 <p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
@@ -629,7 +634,7 @@ window.addEventListener('load', function() {
 <p>a、 注册<a href="https://github.com/">github</a>；</p>
 </li>
 <li>
-<p>b、 拉取博主编译好的静态网页的存储库，网址为：https://github.com/setdiaoyong/teamAPI，按照说明，修改成自己授权应用ID；</p>
+<p>b、 拉取博主编译好的静态网页的存储库，网址为：<a href="https://github.com/setdiaoyong/teamAPI">https://github.com/setdiaoyong/teamAPI</a>，按照说明，修改成自己授权应用ID；</p>
 </li>
 <li>
 <p>c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；</p>
@@ -637,13 +642,13 @@ window.addEventListener('load', function() {
 </ul>
 <h2 id="3自有空间域名部署要求高需替换升级">（3）自有空间域名部署（要求高，需替换升级）</h2>
 <p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页文件，修改成自己授权的应用ID，自行部署</strong><br>
-（推荐https://coding.net，提供免费空间，和https访问，但是需要实名认证，不喜勿用。）</p>
+（推荐<a href="https://coding.net">https://coding.net</a>，提供免费空间，和https访问，但是需要实名认证，不喜勿用。）</p>
 <ul>
 <li>
 <p>a、 注册<a href="https://github.com/">github</a>；</p>
 </li>
 <li>
-<p>b、 下载网址为：https://github.com/setdiaoyong/teamAPI，点击绿色下载按钮，下载zip；</p>
+<p>b、 下载网址为：<a href="https://github.com/setdiaoyong/teamAPI">https://github.com/setdiaoyong/teamAPI</a>，点击绿色下载按钮，下载zip；</p>
 </li>
 <li>
 <p>c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。</p>
@@ -748,7 +753,8 @@ window.addEventListener('load', function() {
 <li>c、如果登录闪退，隐式授权access token 和ID token 未勾选</li>
 </ul>
 <p>注：感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong> 提供了反馈。</p>
-<h1 id="邀请他人注册调用的授权设置暂时办法">邀请他人注册调用的授权设置（暂时办法）</h1>
+<h1 id="邀请他人注册调用的授权设置">邀请他人注册调用的授权设置</h1>
+<h2 id="1管理员登录特定网址授权暂时办法">1.管理员登录特定网址授权（暂时办法）</h2>
 <ul>
 <li>a、子账号登录他人部署的应用，会报出需要管理员授权<br>
 <img src="https://blog.xbreeding.com/post-images/1587091316482.png" alt="" loading="lazy"></li>
@@ -772,6 +778,8 @@ window.addEventListener('load', function() {
 <li>k、删除管理员授权，保证安全<br>
 <img src="https://blog.xbreeding.com/post-images/1587092099707.png" alt="" loading="lazy"></li>
 </ul>
+<h2 id="2管理员中心设置允许用户请求授权官方preview">2.管理员中心设置允许用户请求授权（官方preview）</h2>
+<p>官方还在开发，设置后无法保存。</p>
 <h1 id="未来计划">未来计划</h1>
 <p><strong>（1）周期性定时邮件及自动回复维持子账号活跃度</strong></p>
 <p><strong>（2）待检测，可能不识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
