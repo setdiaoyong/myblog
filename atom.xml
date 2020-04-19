@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-19T08:48:41.557Z</updated>
+    <updated>2020-04-19T11:26:43.082Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -222,7 +222,8 @@
 <img src="https://blog.xbreeding.com/post-images/1587092099707.png" alt="" loading="lazy"></li>
 </ul>
 <h2 id="2管理员中心设置允许用户请求授权官方preview">2.管理员中心设置允许用户请求授权（官方preview）</h2>
-<p>官方还在开发，设置后无法保存。</p>
+<p>官方还在开发，设置后无法保存。<br>
+<img src="https://blog.xbreeding.com/post-images/1587295592959.png" alt="" loading="lazy"></p>
 <h1 id="未来计划">未来计划</h1>
 <p><strong>（1）周期性定时邮件及自动回复维持子账号活跃度</strong></p>
 <p><strong>（2）待检测，可能不识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
