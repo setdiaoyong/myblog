@@ -8,7 +8,7 @@
 <meta name="description" content="大隐于市者，能">
 <meta name="theme-color" content="#000">
 <title>Office 365 team API可无设备，无域名部署，需登录账户调用 | 凤梧山居</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587281501729">
+<link rel="shortcut icon" href="/favicon.ico?v=1587283715965">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
 
@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
             </div>
             <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
               <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number no_compress" id="toc_wrapper">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
     <ul class="markdownIt-TOC">
 <li><a href="#%E7%89%B9%E5%88%AB%E8%87%B4%E8%B0%A2">特别致谢</a></li>
 <li><a href="#%E6%88%90%E5%8A%9F%E7%A4%BA%E4%BE%8B">成功示例</a></li>
@@ -574,7 +574,7 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1917<span class="pc-show">字数</span></span>
+      <span>1918<span class="pc-show">字数</span></span>
     </span>
     
       <span id="/postundefined" class="meta-item pc-show leancloud_visitors">
@@ -599,7 +599,7 @@ window.addEventListener('load', function() {
 <h1 id="特别说明">特别说明</h1>
 <p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
 <p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
-<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为https://localhost:3000/，不然可能退出后跳转报错。</p>
+<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为 https://localhost:3000/，不然可能退出后跳转报错。</p>
 <p>-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。</p>
 <p>-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。</p>
 <h1 id="前期基础">前期基础</h1>

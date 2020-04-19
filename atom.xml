@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-19T07:31:45.260Z</updated>
+    <updated>2020-04-19T08:08:43.534Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -48,7 +48,7 @@
 <h1 id="特别说明">特别说明</h1>
 <p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
 <p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
-<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为https://localhost:3000/，不然可能退出后跳转报错。</p>
+<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为 https://localhost:3000/，不然可能退出后跳转报错。</p>
 <p>-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。</p>
 <p>-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。</p>
 <h1 id="前期基础">前期基础</h1>
