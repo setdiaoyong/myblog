@@ -2185,7 +2185,11 @@ body {
     .brand {
       background: #000000fe;
     }
-    .main-title {
+    
+      .brand {
+        font-weight: bold;
+        transform: scale(1);
+      }.main-title {
       color: #FFF;
     }
     .mist .site-title i {
