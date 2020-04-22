@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-21T13:06:32.780Z</updated>
+    <updated>2020-04-22T03:06:53.003Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -11,9 +11,18 @@
     <icon>https://blog.xbreeding.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 凤梧山居</rights>
     <entry>
+        <title type="html"><![CDATA[武切维奇无]]></title>
+        <id>https://blog.xbreeding.com/post/blwxB2gub/</id>
+        <link href="https://blog.xbreeding.com/post/blwxB2gub/">
+        </link>
+        <updated>2020-04-22T03:02:25.000Z</updated>
+        <content type="html"><![CDATA[<p>恩恩额</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[（非专业操作）免费空间维持oneindex 长期授权的缓存设置]]></title>
-        <id>https://blog.xbreeding.com/dMbiPACR5/</id>
-        <link href="https://blog.xbreeding.com/dMbiPACR5/">
+        <id>https://blog.xbreeding.com/post/dMbiPACR5/</id>
+        <link href="https://blog.xbreeding.com/post/dMbiPACR5/">
         </link>
         <updated>2020-04-17T14:14:11.000Z</updated>
         <summary type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
@@ -29,8 +38,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Office 365 team API可无设备，无域名部署，需登录账户调用]]></title>
-        <id>https://blog.xbreeding.com/mYQjpWO-3/</id>
-        <link href="https://blog.xbreeding.com/mYQjpWO-3/">
+        <id>https://blog.xbreeding.com/post/mYQjpWO-3/</id>
+        <link href="https://blog.xbreeding.com/post/mYQjpWO-3/">
         </link>
         <updated>2020-04-17T00:39:54.000Z</updated>
         <summary type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong></p>
