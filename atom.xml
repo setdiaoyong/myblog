@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-24T03:44:10.328Z</updated>
+    <updated>2020-04-24T03:45:40.004Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -103,7 +103,7 @@
 <p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用<br>
 <img src="https://blog.xbreeding.com/post-images/1587086835316.png" alt="" loading="lazy"></p>
 <ul>
-<li>a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs（http后s最好加）</li>
+<li>a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs填 https://localhost:3000/（http后s最好加）</li>
 </ul>
 <figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587086887866.png" alt="" loading="lazy"></figure>
 <ul>
