@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-22T10:01:06.709Z</updated>
+    <updated>2020-04-24T03:44:10.328Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -53,9 +53,9 @@
 <h1 id="前期基础">前期基础</h1>
 <p>（1）参考 <strong>浅忆博客</strong>：<a href="https://blog.curlc.com/archives/599.html">新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)</a>。申请office 365 开发者订阅。</p>
 <p>（2）参考 <strong>啊哈程序</strong>：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。</p>
-<h1 id="部署技术路线">部署技术路线</h1>
-<h2 id="1githubrender简单可在线修改升级">（1）github+render（简单，可在线修改升级）。</h2>
-<p><strong>github拉取officedev官方源码，修改成自己授权的ID，render在线编译部署网页</strong></p>
+<h1 id="可选的三种部署路线">可选的三种部署路线</h1>
+<h2 id="1githubrender简单可在线拉取官方更新在线升级">（1）github+render（简单，可在线拉取官方更新在线升级）。</h2>
+<p><strong>github拉取officedev官方码，修改成自己授权的ID，render在线编译部署网页</strong></p>
 <ul>
 <li>
 <p>a、 注册<a href="https://github.com/">github</a>；</p>
@@ -70,7 +70,7 @@
 <p>d、 在render中拉取自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。</p>
 </li>
 </ul>
-<h2 id="2githubgithub-page最简单需替换升级">（2）github+github page（最简单，需替换升级）</h2>
+<h2 id="2githubgithub-page最简单需本地编译官方更新替换静态文件升级">（2）github+github page（最简单，需本地编译官方更新，替换静态文件升级）</h2>
 <p><strong>github拉取博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。</strong></p>
 <ul>
 <li>
@@ -83,8 +83,8 @@
 <p>c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；</p>
 </li>
 </ul>
-<h2 id="3自有空间域名部署要求高需替换升级">（3）自有空间域名部署（要求高，需替换升级）</h2>
-<p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页文件，修改成自己授权的应用ID，自行部署</strong><br>
+<h2 id="3自有空间域名部署要求高需本地编译官方更新替换静态文件升级">（3）自有空间域名部署（要求高，需本地编译官方更新，替换静态文件升级）</h2>
+<p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页静态文件，修改成自己授权的应用ID，自行部署</strong><br>
 （推荐<a href="https://coding.net">https://coding.net</a>，提供免费空间，和https访问，但是需要实名认证，不喜勿用。）</p>
 <ul>
 <li>
@@ -103,11 +103,11 @@
 <p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用<br>
 <img src="https://blog.xbreeding.com/post-images/1587086835316.png" alt="" loading="lazy"></p>
 <ul>
-<li>a、 起名，授权登录用户类型，跳转地址Redirect URIs（http后s最好加）</li>
+<li>a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs（http后s最好加）</li>
 </ul>
 <figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587086887866.png" alt="" loading="lazy"></figure>
 <ul>
-<li>b、Redirect URIs中设置https://localhost:3000/（http后s最好加）及自己部署https网址（必须https），Logout URL：https://localhost:3000/（http后必须加s），勾选隐式授权access token，ID token。</li>
+<li>b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加）；2、Redirect URIs再填上自己部署https网址，如我的https://teamstudy.onrender.com/，或github page：X自己用户名X.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。</li>
 </ul>
 <p><img src="https://blog.xbreeding.com/post-images/1587086915551.png" alt="" loading="lazy"><br>
 源代码中有退出跳转网址路径<br>
