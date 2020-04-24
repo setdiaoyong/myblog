@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-04-24T03:45:40.004Z</updated>
+    <updated>2020-04-24T06:05:21.691Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -42,7 +42,7 @@
 <p>-（2）感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong></p>
 <p><a href="https://jq.qq.com/?_wv=1027&amp;k=52yJp9C">点击此加入群聊【E5技术交流群】</a></p>
 <h1 id="成功示例">成功示例</h1>
-<p>-（1）github+render部署：<a href="https://teamstudy.onrender.com/">https://teamstudy.onrender.com/</a></p>
+<p>-（1）github+render部署：<a href="https://teamstudy.onrender.com/">https://teamstudy.onrender.com/</a>(Render可能部分被墙，时好时坏)</p>
 <p>-（2）自己空间域名上传静态文件部署coding.net：<a href="https://h0hyvx.coding-pages.com">https://h0hyvx.coding-pages.com</a></p>
 <h1 id="特别说明">特别说明</h1>
 <p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
@@ -61,17 +61,17 @@
 <p>a、 注册<a href="https://github.com/">github</a>；</p>
 </li>
 <li>
-<p>b、 拉取官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID；</p>
+<p>b、 拉取(页面右上角Fork)官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID（按下文创建应用，获得应用ID）；</p>
 </li>
 <li>
 <p>c、 用自己github账号注册<a href="https://render.com/">render</a>；</p>
 </li>
 <li>
-<p>d、 在render中拉取自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。</p>
+<p>d、 在render中选择自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。</p>
 </li>
 </ul>
 <h2 id="2githubgithub-page最简单需本地编译官方更新替换静态文件升级">（2）github+github page（最简单，需本地编译官方更新，替换静态文件升级）</h2>
-<p><strong>github拉取博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。</strong></p>
+<p><strong>github拉取(页面右上角Fork)博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。</strong></p>
 <ul>
 <li>
 <p>a、 注册<a href="https://github.com/">github</a>；</p>
@@ -97,17 +97,17 @@
 <p>c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。</p>
 </li>
 </ul>
-<h1 id="设置应用授权">设置应用授权</h1>
+<h1 id="首先创建应用及授权">首先创建应用及授权</h1>
 <p>参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）</p>
 <p>个人设置截图如下：</p>
-<p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用<br>
+<p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用并授权API<br>
 <img src="https://blog.xbreeding.com/post-images/1587086835316.png" alt="" loading="lazy"></p>
 <ul>
 <li>a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs填 https://localhost:3000/（http后s最好加）</li>
 </ul>
 <figure data-type="image" tabindex="1"><img src="https://blog.xbreeding.com/post-images/1587086887866.png" alt="" loading="lazy"></figure>
 <ul>
-<li>b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加）；2、Redirect URIs再填上自己部署https网址，如我的https://teamstudy.onrender.com/，或github page：X自己用户名X.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。</li>
+<li>b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加，上一步已填好）；2、Redirect URIs再点击 add URL填上自己要部署https网址，如我的https://teamstudy.onrender.com/（以后可修改，或等render给出网址再添加填写），或部署在githubpage，就填github page唯一网址：https://&lt;自己用户名&gt;.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。</li>
 </ul>
 <p><img src="https://blog.xbreeding.com/post-images/1587086915551.png" alt="" loading="lazy"><br>
 源代码中有退出跳转网址路径<br>
@@ -178,7 +178,7 @@
 <p>##（3）自由空间域名部署及设置参照github page部署方法</p>
 <h1 id="访问网页">访问网页</h1>
 <ul>
-<li>a、访问部署成功的网址</li>
+<li>a、在浏览器隐私模式中（防止自动登录影响），访问部署成功的网址</li>
 </ul>
 <figure data-type="image" tabindex="14"><img src="https://blog.xbreeding.com/post-images/1587087924283.png" alt="" loading="lazy"></figure>
 <ul>
