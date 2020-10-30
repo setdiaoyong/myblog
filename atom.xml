@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-10-28T19:22:29.854Z</updated>
+    <updated>2020-10-30T16:50:17.096Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -37,22 +37,24 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Office 365 team API可无设备，无域名部署，需登录账户调用]]></title>
+        <title type="html"><![CDATA[Office 365 team API可无设备，无域名部署，以非组织内部用户调用保活]]></title>
         <id>https://blog.xbreeding.com/post/mYQjpWO-3/</id>
         <link href="https://blog.xbreeding.com/post/mYQjpWO-3/">
         </link>
         <updated>2020-04-17T00:39:54.000Z</updated>
-        <summary type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong></p>
+        <summary type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong><br>
+<strong>2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用</strong></p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong></p>
+        <content type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong><br>
+<strong>2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用</strong></p>
 <!-- more -->
 <h1 id="特别致谢">特别致谢</h1>
 <p>-（1）感谢 <a href="https://blog.curlc.com/archives/687.html">浅忆博客</a></p>
 <p>-（2）感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong></p>
 <p><a href="https://jq.qq.com/?_wv=1027&amp;k=52yJp9C">点击此加入群聊【E5技术交流群】</a></p>
 <h1 id="成功示例">成功示例</h1>
-<p>-（1）github+render部署：<a href="https://teamstudy.onrender.com/">https://teamstudy.onrender.com/</a>(Render可能部分被墙，时好时坏)</p>
-<p>-（2）自己空间域名上传静态文件部署coding.net：<a href="https://h0hyvx.coding-pages.com">https://h0hyvx.coding-pages.com</a></p>
+<p>-（1）github+render动态部署（支持nodejs，在线编译）：<a href="https://teamstudy.onrender.com/">https://teamstudy.onrender.com/</a>(Render可能部分被墙，时好时坏)</p>
+<p>-（2）国内外免费空间，上传静态文件部署，例如coding.net：<a href="https://h0hyvx.coding-pages.com">https://h0hyvx.coding-pages.com</a>（2020/10/31更新，coding被腾讯收购，估计后期要收费，换成其他免费空间吧，如<a href="https://now.sh">https://now.sh</a>）</p>
 <h1 id="特别说明">特别说明</h1>
 <p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
 <p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
@@ -63,7 +65,7 @@
 <p>（1）参考 <strong>浅忆博客</strong>：<a href="https://blog.curlc.com/archives/599.html">新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)</a>。申请office 365 开发者订阅。</p>
 <p>（2）参考 <strong>啊哈程序</strong>：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。</p>
 <h1 id="可选的三种部署路线">可选的三种部署路线</h1>
-<h2 id="1githubrender简单可在线拉取官方更新在线升级">（1）github+render（简单，可在线拉取官方更新在线升级）。</h2>
+<h2 id="1githubrender或httpsvercelcom还未测试简单可在线拉取官方更新在线升级">（1）github+render（或https://vercel.com/，还未测试）（简单，可在线拉取官方更新在线升级）。</h2>
 <p><strong>github拉取officedev官方码，修改成自己授权的ID，render在线编译部署网页</strong></p>
 <ul>
 <li>
@@ -94,7 +96,7 @@
 </ul>
 <h2 id="3自有空间域名部署要求高需本地编译官方更新替换静态文件升级">（3）自有空间域名部署（要求高，需本地编译官方更新，替换静态文件升级）</h2>
 <p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页静态文件，修改成自己授权的应用ID，自行部署</strong><br>
-（推荐<a href="https://coding.net">https://coding.net</a>，提供免费空间，和https访问，但是需要实名认证，不喜勿用。）</p>
+（2020/10/31更新，推荐<a href="https://vercel.com/">https://vercel.com/</a>，提供免费空间，和https访问，可直接用github账户登录，拉取我的github账户中的静态文件，直接部署。）</p>
 <ul>
 <li>
 <p>a、 注册<a href="https://github.com/">github</a>；</p>
@@ -108,7 +110,7 @@
 </ul>
 <h1 id="首先创建应用及授权">首先创建应用及授权</h1>
 <p>参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）</p>
-<p>个人设置截图如下：</p>
+<p>个人设置截图如下：（2020/10/31开始更新，微软重构了Azure portal的界面，有点不一样了，后面有空再更新，之前无法设置组织内用户添加组织外应用，现在上线啦，感觉我的这个方法可能更有前途，多找一些人，使用自己上线的这team中转应用，其实就是个官方示例的开始界面《手动捂脸》）</p>
 <p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用并授权API<br>
 <img src="https://blog.xbreeding.com/post-images/1587086835316.png" alt="" loading="lazy"></p>
 <ul>
@@ -206,7 +208,14 @@
 </ul>
 <p>注：感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong> 提供了反馈。</p>
 <h1 id="邀请他人注册调用的授权设置">邀请他人注册调用的授权设置</h1>
-<h2 id="1管理员登录特定网址授权暂时办法">1.管理员登录特定网址授权（暂时办法）</h2>
+<h2 id="1管理员中心设置允许非管理员用户添加官方已上线">1.管理员中心设置允许非管理员用户添加（官方已上线）</h2>
+<p><s>（官方preview）<br>
+官方还在开发，设置后无法保存。</s>~~<br>
+<img src="https://blog.xbreeding.com/post-images/1587295592959.png" alt="" loading="lazy">~~<br>
+2020/10/31更新<br>
+官方已上线了🏳️‍🌈🏳️‍🌈🏳️‍🌈<br>
+<img src="https://blog.xbreeding.com/post-images/1604075825809.png" alt="" loading="lazy"></p>
+<h2 id="2管理员登录特定网址授权作废官方提供设置了"><s>2.管理员登录特定网址授权（作废，官方提供设置了）</s></h2>
 <ul>
 <li>a、子账号登录他人部署的应用，会报出需要管理员授权<br>
 <img src="https://blog.xbreeding.com/post-images/1587091316482.png" alt="" loading="lazy"></li>
@@ -230,12 +239,11 @@
 <li>k、删除管理员授权，保证安全<br>
 <img src="https://blog.xbreeding.com/post-images/1587092099707.png" alt="" loading="lazy"></li>
 </ul>
-<h2 id="2管理员中心设置允许用户请求授权官方preview">2.管理员中心设置允许用户请求授权（官方preview）</h2>
-<p>官方还在开发，设置后无法保存。<br>
-<img src="https://blog.xbreeding.com/post-images/1587295592959.png" alt="" loading="lazy"></p>
 <h1 id="未来计划">未来计划</h1>
-<p><strong>（1）周期性定时邮件及自动回复维持子账号电子邮件活跃度</strong></p>
+<p><strong>（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度</strong></p>
 <p><strong>（2）已检测，官方已忽略，不会识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
+<p><strong>（3）网上有提到，绑定自己的域名，有可能更容易保活</strong></p>
+<p><strong>续订随缘</strong></p>
 ]]></content>
     </entry>
 </feed>
