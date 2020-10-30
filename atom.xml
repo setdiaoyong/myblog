@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xbreeding.com</id>
     <title>凤梧山居</title>
-    <updated>2020-10-30T16:50:17.096Z</updated>
+    <updated>2020-10-30T16:59:14.033Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xbreeding.com"/>
     <link rel="self" href="https://blog.xbreeding.com/atom.xml"/>
@@ -10,6 +10,43 @@
     <logo>https://blog.xbreeding.com/images/avatar.png</logo>
     <icon>https://blog.xbreeding.com/favicon.ico</icon>
     <rights>All rights reserved 2020, 凤梧山居</rights>
+    <entry>
+        <title type="html"><![CDATA[配置华为云]]></title>
+        <id>https://blog.xbreeding.com/post/tNkyvNpJT/</id>
+        <link href="https://blog.xbreeding.com/post/tNkyvNpJT/">
+        </link>
+        <updated>2020-05-25T15:54:47.000Z</updated>
+        <content type="html"><![CDATA[<p>下载XShell<br>
+打开XShell<br>
+填写公网IP<br>
+返回Xshell,点击用户身份验证，用户名为root,输入相应的密码</p>
+<p>1、查看服务器系统版本信息</p>
+<p>cat /etc/issue<br>
+2、下载anaconda：</p>
+<p>'''<br>
+从清华镜像https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/<br>
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.02-Linux-x86_64.sh（不适合arm版，需要从源码编译安装，可以直接装python，用pip，或者直接装tenserflow）<br>
+'''<br>
+可以用minianaconda 但是没到最新版<br>
+3、安装anaconda</p>
+<p>bash Anaconda3-2020.02-Linux-x86_64.sh（不适合arm架构）<br>
+安装其他大神编译好的<br>
+https://bbs.huaweicloud.com/forum/thread-23807-1-1.html<br>
+https://github.com/Archiconda/build-tools/releases<br>
+https://cdn.jsdelivr.net/gh/Archiconda/build-tools@0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh</p>
+<p>基于鲲鹏 Ubuntu 18.04安装Tensorflow 1.4.1<br>
+https://bbs.huaweicloud.com/forum/thread-23713-1-1.html</p>
+<p>配置ftp<br>
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html<br>
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0170139796.html</p>
+<p>mysql<br>
+https://bbs.huaweicloud.com/forum/thread-24680-1-1.html<br>
+https://dev.mysql.com/downloads/mysql/</p>
+<p>部署<br>
+https://github.com/cloudreve/Cloudreve<br>
+https://docs.cloudreve.org/</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[IDM定时探嗅oneindex站点，调用api]]></title>
         <id>https://blog.xbreeding.com/post/pVvhUoSzv/</id>
