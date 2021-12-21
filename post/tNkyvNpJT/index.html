@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="大隐于市者，能">
+<meta name="theme-color" content="#000">
+<title>配置华为云 | 凤梧山居</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1640062052386">
+<link rel="stylesheet" href="/styles/main.css">
+<link rel="stylesheet" href="/media/css/pisces.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css"
+  rel="stylesheet">
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163842540-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-163842540-1');
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?8483238d846a0429122f3728e9c4b441";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+  <meta name="description" content="配置华为云" />
+  <meta name="keywords" content="" />
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="pisces">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>凤梧山居</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">精于心，简于形，胜于德</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about/" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_blank">
+                  
+                    🔱友情链接
+                  
+                </a>
+              </li>
+            
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout pisces ">
+      <div class="section-layout-wrapper">
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">凤梧山人</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://github.com/setdiaoyong">
+              <i class="fa fa-github-alt" title="GitHub"></i>
+            </a>
+          
+            <a href="http://sharepan.epizy.com/">
+              <i class="fa fa-cloud-download" title="分享盘"></i>
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
+
+
+</div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="http://localhost:4000/post/tNkyvNpJT/">
+      配置华为云
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-05-25</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>251<span class="pc-show">字数</span></span>
+    </span>
+    
+    
+    
+    <span id="/post/tNkyvNpJT/" data-flag-title="配置华为云" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span>浏览量：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
+  </div>
+</header>
+            <div class="post-body next-md-body" id="post_body">
+              <p>下载XShell<br>
+打开XShell<br>
+填写公网IP<br>
+返回Xshell,点击用户身份验证，用户名为root,输入相应的密码</p>
+<p>1、查看服务器系统版本信息</p>
+<p>cat /etc/issue<br>
+2、下载anaconda：</p>
+<p>'''<br>
+从清华镜像https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/<br>
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.02-Linux-x86_64.sh（不适合arm版，需要从源码编译安装，可以直接装python，用pip，或者直接装tenserflow）<br>
+'''<br>
+可以用minianaconda 但是没到最新版<br>
+3、安装anaconda</p>
+<p>bash Anaconda3-2020.02-Linux-x86_64.sh（不适合arm架构）<br>
+安装其他大神编译好的<br>
+https://bbs.huaweicloud.com/forum/thread-23807-1-1.html<br>
+https://github.com/Archiconda/build-tools/releases<br>
+https://cdn.jsdelivr.net/gh/Archiconda/build-tools@0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh</p>
+<p>基于鲲鹏 Ubuntu 18.04安装Tensorflow 1.4.1<br>
+https://bbs.huaweicloud.com/forum/thread-23713-1-1.html</p>
+<p>配置ftp<br>
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html<br>
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0170139796.html</p>
+<p>mysql<br>
+https://bbs.huaweicloud.com/forum/thread-24680-1-1.html<br>
+https://dev.mysql.com/downloads/mysql/</p>
+<p>部署<br>
+https://github.com/cloudreve/Cloudreve<br>
+https://docs.cloudreve.org/</p>
+
+            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      凤梧山人
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://localhost:4000/post/tNkyvNpJT/" title="配置华为云">http://localhost:4000/post/tNkyvNpJT/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="免费导航站部署资源收集" href="http://localhost:4000/post/dkM1P9Ma1/">免费导航站部署资源收集</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="免费导航站部署资源收集" href="http://localhost:4000/post/dkM1P9Ma1/">上一篇</a>
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="IDM定时探嗅oneindex站点，调用api" href="http://localhost:4000/post/pVvhUoSzv/">IDM定时探嗅oneindex站点，调用api</a>
+        <a class="nav-mobile-next" title="IDM定时探嗅oneindex站点，调用api" href="http://localhost:4000/post/pVvhUoSzv/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+            
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('https://upimage.alexhchu.com/2020/04/21/47eda59424daa.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'nJORPSLvvCqPfrMlo68UuVG5-9Nh9j0Va',
+    appKey: 'TRw51kJ6vmrCYwVGAWTimnwl',
+    avatar: 'wavatar',
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="pisces back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+    <div class="bg-img">
+      <img src="/media/images/1.jpg" />
+    </div>
+  
+  
+    
+<link rel="stylesheet" href="/media/live2d/css/live2d.css" />
+<div class="box-scale">
+  <div id="landlord" style="left: -1px;bottom: -1px;"
+    data-key="">
+    <canvas id="live2d" width="500" height="560" class="live2d"></canvas>
+    
+
+      <div class="message" style="opacity:0"></div>
+      <div class="live_talk_input_body">
+        <div class="live_talk_input_name_body">
+          <input name="name" type="text" class="live_talk_name white_input" id="AIuserName" autocomplete="off"
+            placeholder="你的名字" />
+        </div>
+        <div class="live_talk_input_text_body">
+          <input name="talk" type="text" class="live_talk_talk white_input" id="AIuserText" autocomplete="off"
+            placeholder="要和我聊什么呀？" />
+          <button type="button" class="live_talk_send_btn" id="talk_send">发送</button>
+        </div>
+      </div>
+      <input name="live_talk" id="live_talk" value="1" type="hidden" />
+      <div class="live_ico_box">
+        <div class="live_ico_item type_info" id="showInfoBtn"></div>
+        <div class="live_ico_item type_talk" id="showTalkBtn"></div>
+        
+        <div class="live_ico_item type_music" id="musicButton"></div>
+        
+        <div class="live_ico_item type_youdu" id="youduButton"></div>
+        <div class="live_ico_item type_quit" id="hideButton"></div>
+        <input name="live_statu_val" id="live_statu_val" value="0" type="hidden" />
+        <audio src="" style="display:none;" id="live2d_bgm" data-bgm="0" preload="none"></audio>
+        <input id="duType" value="douqilai" type="hidden">
+        
+        <input name="live2dBGM" value="http://sharepan.epizy.com/woceng.mp3" type="hidden">
+        
+      </div>
+    
+  </div>
+</div>
+<div id="open_live2d">召唤看板娘</div>
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+  var message_Path = 'https://cdn.jsdelivr.net/gh/hsxyhao/live2d.github.io@master/';
+  let landlord = document.querySelector('#landlord');
+  var apiKey = landlord.dataset.key;
+</script>
+<script type="text/javascript" src="/media/live2d/js/live2d.js"></script>
+<script>
+	var home_Path = document.location.protocol + '//' + window.document.location.hostname + ":" + window.document.location.port + '/';
+	var userAgent = window.navigator.userAgent.toLowerCase();
+	var norunAI = ["android", "iphone", "ipod", "ipad", "windows phone", "mqqbrowser", "msie", "trident/7.0"];
+	var norunFlag = false;
+
+	for (var i = 0; i < norunAI.length; i++) {
+		if (userAgent.indexOf(norunAI[i]) > -1) {
+			norunFlag = true;
+			break;
+		}
+	}
+
+	if (!window.WebGLRenderingContext) {
+		norunFlag = true;
+	}
+
+	if (!norunFlag) {
+		var hitFlag = false;
+		var AIFadeFlag = false;
+		var liveTlakTimer = null;
+		var sleepTimer_ = null;
+		var AITalkFlag = false;
+		var talkNum = 0;
+		(function () {
+			function renderTip(template, context) {
+				var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
+				return template.replace(tokenReg, function (word, slash1, token, slash2) {
+					if (slash1 || slash2) {
+						return word.replace('\\', '');
+					}
+					var variables = token.replace(/\s/g, '').split('.');
+					var currentObject = context;
+					var i, length, variable;
+					for (i = 0, length = variables.length; i < length; ++i) {
+						variable = variables[i];
+						currentObject = currentObject[variable];
+						if (currentObject === undefined || currentObject === null) return '';
+					}
+					return currentObject;
+				});
+			}
+
+			String.prototype.renderTip = function (context) {
+				return renderTip(this, context);
+			};
+
+			var re = /x/;
+			re.toString = function () {
+				showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
+				return '';
+			};
+
+			$(document).on('copy', function () {
+				showMessage('你都复制了些什么呀，转载要记得加上出处哦~~', 5000);
+			});
+
+			function initTips() {
+				$.ajax({
+					cache: true,
+					url: message_Path + 'message.json',
+					dataType: "json",
+					success: function (result) {
+						$.each(result.mouseover, function (index, tips) {
+							$(tips.selector).mouseover(function () {
+								var text = tips.text;
+								if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
+								text = text.renderTip({ text: $(this).text() });
+								showMessage(text, 3000);
+								talkValTimer();
+								clearInterval(liveTlakTimer);
+								liveTlakTimer = null;
+							});
+							$(tips.selector).mouseout(function () {
+								showHitokoto();
+								if (liveTlakTimer == null) {
+									liveTlakTimer = window.setInterval(function () {
+										showHitokoto();
+									}, 15000);
+								};
+							});
+						});
+						$.each(result.click, function (index, tips) {
+							$(tips.selector).click(function () {
+								if (hitFlag) {
+									return false
+								}
+								hitFlag = true;
+								setTimeout(function () {
+									hitFlag = false;
+								}, 8000);
+								var text = tips.text;
+								if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
+								text = text.renderTip({ text: $(this).text() });
+								showMessage(text, 3000);
+							});
+							clearInterval(liveTlakTimer);
+							liveTlakTimer = null;
+							if (liveTlakTimer == null) {
+								liveTlakTimer = window.setInterval(function () {
+									showHitokoto();
+								}, 15000);
+							};
+						});
+					}
+				});
+			}
+			initTips();
+
+			var text;
+			if (document.referrer !== '') {
+				var referrer = document.createElement('a');
+				referrer.href = document.referrer;
+				text = '嗨！来自 <span style="color:#0099cc;">' + referrer.hostname + '</span> 的朋友！';
+				var domain = referrer.hostname.split('.')[1];
+				if (domain == 'baidu') {
+					text = '嗨！ 来自 百度搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				} else if (domain == 'so') {
+					text = '嗨！ 来自 360搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				} else if (domain == 'google') {
+					text = '嗨！ 来自 谷歌搜索 的朋友！<br>欢迎访问<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				}
+			} else {
+				if (window.location.href == home_Path) { //主页URL判断，需要斜杠结尾
+					var now = (new Date()).getHours();
+					if (now > 23 || now <= 5) {
+						text = '你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？';
+					} else if (now > 5 && now <= 7) {
+						text = '早上好！一日之计在于晨，美好的一天就要开始了！';
+					} else if (now > 7 && now <= 11) {
+						text = '上午好！工作顺利嘛，不要久坐，多起来走动走动哦！';
+					} else if (now > 11 && now <= 14) {
+						text = '中午了，工作了一个上午，现在是午餐时间！';
+					} else if (now > 14 && now <= 17) {
+						text = '午后很容易犯困呢，今天的运动目标完成了吗？';
+					} else if (now > 17 && now <= 19) {
+						text = '傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红~~';
+					} else if (now > 19 && now <= 21) {
+						text = '晚上好，今天过得怎么样？';
+					} else if (now > 21 && now <= 23) {
+						text = '已经这么晚了呀，早点休息吧，晚安~~';
+					} else {
+						text = '嗨~ 快来逗我玩吧！';
+					}
+				} else {
+					text = '欢迎阅读<span style="color:#0099cc;">「 ' + document.title.split(' - ')[0] + ' 」</span>';
+				}
+			}
+			showMessage(text, 12000);
+		})();
+
+		liveTlakTimer = setInterval(function () {
+			showHitokoto();
+		}, 15000);
+
+		function showHitokoto() {
+			if (sessionStorage.getItem("Sleepy") !== "1") {
+				if (!AITalkFlag) {
+					$.getJSON('https://v1.hitokoto.cn/', function (result) {
+						talkValTimer();
+						showMessage(result.hitokoto, 0);
+					});
+				}
+			} else {
+				hideMessage(0);
+				if (sleepTimer_ == null) {
+					sleepTimer_ = setInterval(function () {
+						checkSleep();
+					}, 200);
+				}
+			}
+		}
+
+		function checkSleep() {
+			var sleepStatu = sessionStorage.getItem("Sleepy");
+			if (sleepStatu !== '1') {
+				talkValTimer();
+				showMessage('你回来啦~', 0);
+				clearInterval(sleepTimer_);
+				sleepTimer_ = null;
+			}
+		}
+
+		function showMessage(text, timeout) {
+			if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
+			$('.message').stop();
+			$('.message').html(text);
+			$('.message').fadeTo(200, 1);
+			//if (timeout === null) timeout = 5000;
+			//hideMessage(timeout);
+		}
+		function talkValTimer() {
+			$('#live_talk').val('1');
+		}
+
+		function hideMessage(timeout) {
+			//$('.message').stop().css('opacity',1);
+			if (timeout === null) timeout = 5000;
+			$('.message').delay(timeout).fadeTo(200, 0);
+		}
+
+		function initLive2d() {
+			$('#hideButton').on('click', function () {
+				if (AIFadeFlag) {
+					return false;
+				} else {
+					AIFadeFlag = true;
+					localStorage.setItem("live2dhidden", "0");
+					$('#landlord').fadeOut(200);
+					$('#open_live2d').delay(200).fadeIn(200);
+					setTimeout(function () {
+						AIFadeFlag = false;
+					}, 300);
+				}
+			});
+			$('#open_live2d').on('click', function () {
+				if (AIFadeFlag) {
+					return false;
+				} else {
+					AIFadeFlag = true;
+					localStorage.setItem("live2dhidden", "1");
+					$('#open_live2d').fadeOut(200);
+					$('#landlord').delay(200).fadeIn(200);
+					setTimeout(function () {
+						AIFadeFlag = false;
+					}, 300);
+				}
+			});
+			$('#youduButton').on('click', function () {
+				if ($('#youduButton').hasClass('doudong')) {
+					var typeIs = $('#youduButton').attr('data-type');
+					$('#youduButton').removeClass('doudong');
+					$('body').removeClass(typeIs);
+					$('#youduButton').attr('data-type', '');
+				} else {
+					var duType = $('#duType').val();
+					var duArr = duType.split(",");
+					var dataType = duArr[Math.floor(Math.random() * duArr.length)];
+
+					$('#youduButton').addClass('doudong');
+					$('#youduButton').attr('data-type', dataType);
+					$('body').addClass(dataType);
+				}
+			});
+			if (apiKey) {
+				$('#showInfoBtn').on('click', function () {
+					var live_statu = $('#live_statu_val').val();
+					if (live_statu == "0") {
+						return
+					} else {
+						$('#live_statu_val').val("0");
+						$('.live_talk_input_body').fadeOut(500);
+						AITalkFlag = false;
+						showHitokoto();
+						$('#showTalkBtn').show();
+						$('#showInfoBtn').hide();
+					}
+				});
+				$('#showTalkBtn').on('click', function () {
+					var live_statu = $('#live_statu_val').val();
+					if (live_statu == "1") {
+						return
+					} else {
+						$('#live_statu_val').val("1");
+						$('.live_talk_input_body').fadeIn(500);
+						AITalkFlag = true;
+						$('#showTalkBtn').hide();
+						$('#showInfoBtn').show();
+
+					}
+				});
+				$('#talk_send').on('click', function () {
+					var info_ = $('#AIuserText').val();
+					var userid_ = $('#AIuserName').val();
+					if (info_ == "") {
+						showMessage('写点什么吧！', 0);
+						return;
+					}
+					if (userid_ == "") {
+						showMessage('聊之前请告诉我你的名字吧！', 0);
+						return;
+					}
+					showMessage('思考中~', 0);
+					let protocol = window.location.protocol.indexOf("s") > 0 ? "https" : "http";
+					$.ajax({
+						type: "get",
+						url: `${protocol}://www.tuling123.com/openapi/api?key=${apiKey}&info=${info_}`,
+						dataType: "json",
+						success: function (res) {
+							talkValTimer();
+							showMessage(res.text, 0);
+							$('#AIuserText').val("");
+							sessionStorage.setItem("live2duser", userid_);
+						},
+						error: function (e) {
+							talkValTimer();
+							showMessage('似乎有什么错误，请和站长联系！', 0);
+						}
+					});
+				});
+			} else {
+				$('#showInfoBtn').hide();
+				$('#showTalkBtn').hide();
+			}
+			//获取音乐信息初始化
+			var bgmListInfo = $('input[name=live2dBGM]');
+			if (bgmListInfo.length == 0) {
+				$('#musicButton').hide();
+			} else {
+				var bgmPlayNow = parseInt($('#live2d_bgm').attr('data-bgm'));
+				var bgmPlayTime = 0;
+				var live2dBGM_Num = sessionStorage.getItem("live2dBGM_Num");
+				var live2dBGM_PlayTime = sessionStorage.getItem("live2dBGM_PlayTime");
+				if (live2dBGM_Num) {
+					if (live2dBGM_Num <= $('input[name=live2dBGM]').length - 1) {
+						bgmPlayNow = parseInt(live2dBGM_Num);
+					}
+				}
+				if (live2dBGM_PlayTime) {
+					bgmPlayTime = parseInt(live2dBGM_PlayTime);
+				}
+				var live2dBGMSrc = bgmListInfo.eq(bgmPlayNow).val();
+				$('#live2d_bgm').attr('data-bgm', bgmPlayNow);
+				$('#live2d_bgm').attr('src', live2dBGMSrc);
+				$('#live2d_bgm')[0].currentTime = bgmPlayTime;
+				$('#live2d_bgm')[0].volume = 0.5;
+				var live2dBGM_IsPlay = sessionStorage.getItem("live2dBGM_IsPlay");
+				var live2dBGM_WindowClose = sessionStorage.getItem("live2dBGM_WindowClose");
+				if (live2dBGM_IsPlay == '0' && live2dBGM_WindowClose == '0') {
+					$('#live2d_bgm')[0].play();
+					$('#musicButton').addClass('play');
+				}
+				sessionStorage.setItem("live2dBGM_WindowClose", '1');
+				$('#musicButton').on('click', function () {
+					if ($('#musicButton').hasClass('play')) {
+						$('#live2d_bgm')[0].pause();
+						$('#musicButton').removeClass('play');
+						sessionStorage.setItem("live2dBGM_IsPlay", '1');
+					} else {
+						$('#live2d_bgm')[0].play();
+						$('#musicButton').addClass('play');
+						sessionStorage.setItem("live2dBGM_IsPlay", '0');
+					}
+				});
+				window.onbeforeunload = function () {
+					sessionStorage.setItem("live2dBGM_WindowClose", '0');
+					if ($('#musicButton').hasClass('play')) {
+						sessionStorage.setItem("live2dBGM_IsPlay", '0');
+					}
+				}
+				document.getElementById('live2d_bgm').addEventListener("timeupdate", function () {
+					var live2dBgmPlayTimeNow = document.getElementById('live2d_bgm').currentTime;
+					sessionStorage.setItem("live2dBGM_PlayTime", live2dBgmPlayTimeNow);
+				});
+				document.getElementById('live2d_bgm').addEventListener("ended", function () {
+					var listNow = parseInt($('#live2d_bgm').attr('data-bgm'));
+					listNow++;
+					if (listNow > $('input[name=live2dBGM]').length - 1) {
+						listNow = 0;
+					}
+					var listNewSrc = $('input[name=live2dBGM]').eq(listNow).val();
+					sessionStorage.setItem("live2dBGM_Num", listNow);
+					$('#live2d_bgm').attr('src', listNewSrc);
+					$('#live2d_bgm')[0].play();
+					$('#live2d_bgm').attr('data-bgm', listNow);
+				});
+				document.getElementById('live2d_bgm').addEventListener("error", function () {
+					$('#live2d_bgm')[0].pause();
+					$('#musicButton').removeClass('play');
+					showMessage('音乐似乎加载不出来了呢！', 0);
+				});
+			}
+			//获取用户名
+			var live2dUser = sessionStorage.getItem("live2duser");
+			if (live2dUser !== null) {
+				$('#AIuserName').val(live2dUser);
+			}
+			//获取位置
+			var landL = sessionStorage.getItem("historywidth");
+			var landB = sessionStorage.getItem("historyheight");
+			if (landL == null || landB == null) {
+				landL = '5px'
+				landB = '0px'
+			}
+			$('#landlord').css('left', landL + 'px');
+			$('#landlord').css('bottom', landB + 'px');
+			//移动
+			function getEvent() {
+				return window.event || arguments.callee.caller.arguments[0];
+			}
+			var smcc = document.getElementById("landlord");
+			var moveX = 0;
+			var moveY = 0;
+			var moveBottom = 0;
+			var moveLeft = 0;
+			var moveable = false;
+			var docMouseMoveEvent = document.onmousemove;
+			var docMouseUpEvent = document.onmouseup;
+			smcc.onmousedown = function () {
+				var ent = getEvent();
+				moveable = true;
+				moveX = ent.clientX;
+				moveY = ent.clientY;
+				var obj = smcc;
+				moveBottom = parseInt(obj.style.bottom);
+				moveLeft = parseInt(obj.style.left);
+				if (isFirefox = navigator.userAgent.indexOf("Firefox") > 0) {
+					window.getSelection().removeAllRanges();
+				}
+				document.onmousemove = function () {
+					if (moveable) {
+						var ent = getEvent();
+						var x = moveLeft + ent.clientX - moveX;
+						var y = moveBottom + (moveY - ent.clientY);
+						obj.style.left = x + "px";
+						obj.style.bottom = y + "px";
+					}
+				};
+				document.onmouseup = function () {
+					if (moveable) {
+						var historywidth = obj.style.left;
+						var historyheight = obj.style.bottom;
+						historywidth = historywidth.replace('px', '');
+						historyheight = historyheight.replace('px', '');
+						sessionStorage.setItem("historywidth", historywidth);
+						sessionStorage.setItem("historyheight", historyheight);
+						document.onmousemove = docMouseMoveEvent;
+						document.onmouseup = docMouseUpEvent;
+						moveable = false;
+						moveX = 0;
+						moveY = 0;
+						moveBottom = 0;
+						moveLeft = 0;
+					}
+				};
+			};
+		}
+		$(document).ready(function () {
+			var AIimgSrc = [];
+			let chooseLive2d = 'Aoba'
+			if (chooseLive2d === 'histoire') {
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_00.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_01.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_02.png");
+				AIimgSrc.push(message_Path + "model/histoire/histoire.1024/texture_03.png");
+			} else if (chooseLive2d === 'rem') {
+				AIimgSrc.push(message_Path + "model/rem/remu2048/texture_00.png");
+			} else if (chooseLive2d === 'Aoba') {
+				AIimgSrc.push(message_Path + "model/Aoba/textures/texture_00.png");
+			} else if (chooseLive2d === 'hijiki') {
+				AIimgSrc.push(message_Path + "model/hijiki/moc/hijiki.2048/texture_00.png");
+			} else if (chooseLive2d === 'tororo') {
+				AIimgSrc.push(message_Path + "model/tororo/moc/tororo.2048/texture_00.png");
+			}
+			var images = [];
+			var imgLength = AIimgSrc.length;
+			var loadingNum = 0;
+			for (var i = 0; i < imgLength; i++) {
+				images[i] = new Image();
+				images[i].src = AIimgSrc[i];
+				images[i].onload = function () {
+					loadingNum++;
+					if (loadingNum === imgLength) {
+						var live2dhidden = localStorage.getItem("live2dhidden");
+						if (live2dhidden === "0") {
+							setTimeout(function () {
+								$('#open_live2d').fadeIn(200);
+							}, 1300);
+						} else {
+							setTimeout(function () {
+								$('#landlord').fadeIn(200);
+							}, 1300);
+						}
+						let model = '';
+						if (chooseLive2d === 'histoire') {
+							model = message_Path + "model/histoire/model.json";
+						} else if (chooseLive2d === 'rem') {
+							model = message_Path + "model/rem/model.json";
+						} else if (chooseLive2d === 'Aoba') {
+							model = message_Path + "model/Aoba/model.json";
+						} else if (chooseLive2d === 'hijiki') {
+							model = message_Path + "model/hijiki/hijiki.model.json";
+						} else if (chooseLive2d === 'tororo') {
+							model = message_Path + "model/tororo/tororo.model.json";
+						}
+						setTimeout(function () {
+							loadlive2d("live2d", model);
+						}, 1000);
+						initLive2d();
+						images = null;
+					}
+				}
+			}
+		});
+	}
+</script>
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
+    }
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'true'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target","_blank");
+      }
+    })
+  }
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+
+</script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px; border: 1px solid #fff; border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+  </div>
+</body>
+<input hidden id="copy" />
+<script>
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        console.log('复制操作频率过高');
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+</script>
+<script src="/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500
+  });
+</script>
+
+<!-- <div class="search-mask" id="search_mask">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input type="text" placeholder="搜索">
+      </div>
+      <i class="fa fa-times-circle"></i>
+    </div>
+    <div class="result">
+      
+      <div class="item">
+        <a class="result-title" href="http://localhost:4000/post/dkM1P9Ma1/"" data-c="
+          &lt;p&gt;1、源代码列表&lt;br&gt;
+1.1 静态导航站源代码&lt;br&gt;
+1）&lt;img src=&#34;http://localhost:4000/post-images/1604084069312.ico&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;猿梦极客导航https://github.com/geekape/geek-navigation/tree/json-navigation&lt;/p&gt;
+&lt;p&gt;2、免费部署资源&lt;/p&gt;
+&lt;p&gt;1）https://vercel.com/&lt;/p&gt;
+">免费导航站部署资源收集</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="http://localhost:4000/post/tNkyvNpJT/"" data-c="
+          &lt;p&gt;下载XShell&lt;br&gt;
+打开XShell&lt;br&gt;
+填写公网IP&lt;br&gt;
+返回Xshell,点击用户身份验证，用户名为root,输入相应的密码&lt;/p&gt;
+&lt;p&gt;1、查看服务器系统版本信息&lt;/p&gt;
+&lt;p&gt;cat /etc/issue&lt;br&gt;
+2、下载anaconda：&lt;/p&gt;
+&lt;p&gt;&#39;&#39;&#39;&lt;br&gt;
+从清华镜像https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/&lt;br&gt;
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.02-Linux-x86_64.sh（不适合arm版，需要从源码编译安装，可以直接装python，用pip，或者直接装tenserflow）&lt;br&gt;
+&#39;&#39;&#39;&lt;br&gt;
+可以用minianaconda 但是没到最新版&lt;br&gt;
+3、安装anaconda&lt;/p&gt;
+&lt;p&gt;bash Anaconda3-2020.02-Linux-x86_64.sh（不适合arm架构）&lt;br&gt;
+安装其他大神编译好的&lt;br&gt;
+https://bbs.huaweicloud.com/forum/thread-23807-1-1.html&lt;br&gt;
+https://github.com/Archiconda/build-tools/releases&lt;br&gt;
+https://cdn.jsdelivr.net/gh/Archiconda/build-tools@0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh&lt;/p&gt;
+&lt;p&gt;基于鲲鹏 Ubuntu 18.04安装Tensorflow 1.4.1&lt;br&gt;
+https://bbs.huaweicloud.com/forum/thread-23713-1-1.html&lt;/p&gt;
+&lt;p&gt;配置ftp&lt;br&gt;
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html&lt;br&gt;
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0170139796.html&lt;/p&gt;
+&lt;p&gt;mysql&lt;br&gt;
+https://bbs.huaweicloud.com/forum/thread-24680-1-1.html&lt;br&gt;
+https://dev.mysql.com/downloads/mysql/&lt;/p&gt;
+&lt;p&gt;部署&lt;br&gt;
+https://github.com/cloudreve/Cloudreve&lt;br&gt;
+https://docs.cloudreve.org/&lt;/p&gt;
+">配置华为云</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="http://localhost:4000/post/pVvhUoSzv/"" data-c="
+          &lt;p&gt;IDM定时探嗅oneindex站点，调用api&lt;/p&gt;
+">IDM定时探嗅oneindex站点，调用api</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="http://localhost:4000/post/dMbiPACR5/"" data-c="
+          &lt;p&gt;小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;问题描述&#34;&gt;&lt;strong&gt;问题描述&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台重建缓存，刷新refresh token，才能重新访问onedrive。&lt;/p&gt;
+&lt;p&gt;-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。&lt;/p&gt;
+&lt;h1 id=&#34;在后台瞎设置&#34;&gt;&lt;strong&gt;在后台瞎设置&lt;/strong&gt;&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587212919814.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;3、（2020/10/31更新）infinityfree免费主机，可配置定时任务，5秒真男人，刷新oneindex，还能有3个月的ssl。&lt;/p&gt;
+">（非专业操作）免费空间维持oneindex 长期授权的缓存设置</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="http://localhost:4000/post/mYQjpWO-3/"" data-c="
+          &lt;p&gt;&lt;strong&gt;拜请诸方大佬，各显神通，有缘续订&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;2020/12/17 更新，不好的消息：E5开发订阅开发软件，只支持自己组织账号登录&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h1 id=&#34;特别致谢&#34;&gt;特别致谢&lt;/h1&gt;
+&lt;p&gt;-（1）感谢 &lt;a href=&#34;https://blog.curlc.com/archives/687.html&#34;&gt;浅忆博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;-（2）感谢浅忆博客-E5技术交流群的群友：&lt;strong&gt;别恋&lt;/strong&gt;，&lt;strong&gt;流浪&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=52yJp9C&#34;&gt;点击此加入群聊【E5技术交流群】&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;成功示例&#34;&gt;成功示例&lt;/h1&gt;
+&lt;p&gt;-（1）github+render动态部署（支持nodejs，在线编译）：&lt;a href=&#34;https://teamstudy.onrender.com/&#34;&gt;https://teamstudy.onrender.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;-（2）国内外免费空间，上传静态文件部署，例如免费空间吧，如&lt;a href=&#34;https://now.sh&#34;&gt;https://now.sh&lt;/a&gt;）&lt;/p&gt;
+&lt;h1 id=&#34;特别说明&#34;&gt;特别说明&lt;/h1&gt;
+&lt;p&gt;-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。&lt;/p&gt;
+&lt;p&gt;-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。&lt;/p&gt;
+&lt;p&gt;-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为 https://localhost:3000/，不然可能退出后跳转报错。&lt;/p&gt;
+&lt;p&gt;-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。&lt;/p&gt;
+&lt;p&gt;-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。&lt;/p&gt;
+&lt;h1 id=&#34;前期基础&#34;&gt;前期基础&lt;/h1&gt;
+&lt;p&gt;（1）参考 &lt;strong&gt;浅忆博客&lt;/strong&gt;：&lt;a href=&#34;https://blog.curlc.com/archives/599.html&#34;&gt;新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)&lt;/a&gt;。申请office 365 开发者订阅。&lt;/p&gt;
+&lt;p&gt;（2）参考 &lt;strong&gt;啊哈程序&lt;/strong&gt;：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。&lt;/p&gt;
+&lt;h1 id=&#34;可选的三种部署路线&#34;&gt;可选的三种部署路线&lt;/h1&gt;
+&lt;h2 id=&#34;1githubrender或httpsvercelcom还未测试简单可在线拉取官方更新在线升级&#34;&gt;（1）github+render（或https://vercel.com/，还未测试）（简单，可在线拉取官方更新在线升级）。&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;github拉取officedev官方码，修改成自己授权的ID，render在线编译部署网页&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;a、 注册&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;b、 拉取(页面右上角Fork)官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID（按下文创建应用，获得应用ID）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;c、 用自己github账号注册&lt;a href=&#34;https://render.com/&#34;&gt;render&lt;/a&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;d、 在render中选择自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2githubgithub-page最简单需本地编译官方更新替换静态文件升级&#34;&gt;（2）github+github page（最简单，需本地编译官方更新，替换静态文件升级）&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;github拉取(页面右上角Fork)博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;a、 注册&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;b、 拉取博主编译好的静态网页的存储库，网址为：&lt;a href=&#34;https://github.com/setdiaoyong/teamAPI&#34;&gt;https://github.com/setdiaoyong/teamAPI&lt;/a&gt;，按照说明，修改成自己授权应用ID；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3自有空间域名部署要求高需本地编译官方更新替换静态文件升级&#34;&gt;（3）自有空间域名部署（要求高，需本地编译官方更新，替换静态文件升级）&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;要在自己空间、和https连接的域名下部署，可下载编译好的网页静态文件，修改成自己授权的应用ID，自行部署&lt;/strong&gt;&lt;br&gt;
+（2020/10/31更新，推荐&lt;a href=&#34;https://vercel.com/&#34;&gt;https://vercel.com/&lt;/a&gt;，提供免费空间，和https访问，可直接用github账户登录，拉取我的github账户中的静态文件，直接部署。）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;a、 注册&lt;a href=&#34;https://github.com/&#34;&gt;github&lt;/a&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;b、 下载网址为：&lt;a href=&#34;https://github.com/setdiaoyong/teamAPI&#34;&gt;https://github.com/setdiaoyong/teamAPI&lt;/a&gt;，点击绿色下载按钮，下载zip；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;首先创建应用及授权&#34;&gt;首先创建应用及授权&lt;/h1&gt;
+&lt;p&gt;参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）&lt;/p&gt;
+&lt;p&gt;个人设置截图如下：（2020/10/31开始更新，微软重构了Azure portal的界面，有点不一样了，后面有空再更新，之前无法设置组织内用户添加组织外应用，现在上线啦，感觉我的这个方法可能更有前途，多找一些人，使用自己上线的这team中转应用，其实就是个官方示例的开始界面《手动捂脸》）&lt;/p&gt;
+&lt;p&gt;-（1）在 &lt;a href=&#34;https://portal.azure.com/&#34;&gt;Azure portal&lt;/a&gt; 注册应用并授权API&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587086835316.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs填 https://localhost:3000/（http后s最好加）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587086887866.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加，上一步已填好）；2、Redirect URIs再点击 add URL填上自己要部署https网址，如我的https://teamstudy.onrender.com/（以后可修改，或等render给出网址再添加填写），或部署在githubpage，就填github page唯一网址：https://&amp;lt;自己用户名&amp;gt;.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587086915551.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+源代码中有退出跳转网址路径&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587087829180.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;c、复制应用ID，待用，进入API授权设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587086943633.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;d、设置用户调用api，搜索online，选择readwrite权限&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087016393.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;e、根据个人使用账户权限，可能要管理员授权使用该API，可以在右上角切换管理员账户，&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087033373.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;f、点击进行管理员授权&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087047023.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+-（额外提示）一个ID可以对应多个自己部署的https:域名，在web （经群友&lt;strong&gt;别恋&lt;/strong&gt;验证）&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087067227.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;网页部署&#34;&gt;网页部署&lt;/h1&gt;
+&lt;h2 id=&#34;1githubrender在线编译部署&#34;&gt;（1）github+render在线编译部署&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;a、 拉取官方项目库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087158259.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;b、 找到文件，点击修改， 修改成自己的应用ID&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587095993662.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087385884.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;c、 用拉取的github账号登录render, 创建web空间，选择修改好应用ID的自己github库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;8&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087523215.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;9&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087458844.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;d、 自动识别项目，填写名称，该名称就是给出网址的二级域名，其他无需更改，直接点击确认。&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587096508631.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;e、部署成功后，就给出访问网址，填写到之前应用授权处。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;10&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087616891.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;2githubgithub-page部署&#34;&gt;（2）github+github Page部署&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;a、拉取博主github上传编译好的网页文件：网址为：github.com/setdiaoyong/setdiaoyong.github.io (手动复制到浏览器）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;11&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087673518.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;b、在github网页中打开static\js，分别搜索main.b09a1c35.chunk.js和main.b09a1c35.chunk.js.map ，打开后，点击右上角笔图标，进行编辑，分别搜索 {授权appID} ，将 {授权appID}  连 {}挂号 一起替换成至自己设置好的app ID&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587087271380.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;c、修改库名为：自己github用户名.github.io&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;12&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087703757.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;d、修改好，滚动本页到下方，可以看到，访问地址，即可访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;13&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087873568.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;##（3）自由空间域名部署及设置参照github page部署方法&lt;/p&gt;
+&lt;h1 id=&#34;访问网页&#34;&gt;访问网页&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;a、在浏览器隐私模式中（防止自动登录影响），访问部署成功的网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;14&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087924283.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;b、登录账户，不报错，不闪退，跳转进入如下界面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;15&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587087952044.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;c、创建一个meeting，此次省略截图，完成调用，也继续可跳转到web端的team视频会议软件体验一下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;16&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1587088091091.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;问题解决&#34;&gt;问题解决&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;a、关键是授权设置，注意用设置登录类型范围内的账户登录，&lt;/li&gt;
+&lt;li&gt;b、如果登录报错，要看具体错误类型，再回去修改授权，未设置好Redirect URIs，会提示Redirect URIs不符合&lt;/li&gt;
+&lt;li&gt;c、如果登录闪退，隐式授权access token 和ID token 未勾选&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;注：感谢浅忆博客-E5技术交流群的群友：&lt;strong&gt;别恋&lt;/strong&gt;，&lt;strong&gt;流浪&lt;/strong&gt; 提供了反馈。&lt;/p&gt;
+&lt;h1 id=&#34;邀请他人注册调用的授权设置官方已对e5开发者订阅完全限制只能组织内子账号调用部署的应用&#34;&gt;邀请他人注册调用的授权设置（官方已对E5开发者订阅完全限制，只能组织内子账号调用部署的应用）&lt;/h1&gt;
+&lt;h2 id=&#34;1管理员中心设置允许非管理员用户添加官方已上线&#34;&gt;1.管理员中心设置允许非管理员用户添加（官方已上线）&lt;/h2&gt;
+&lt;p&gt;&lt;s&gt;（官方preview）&lt;br&gt;
+官方还在开发，设置后无法保存。&lt;/s&gt;~~&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587295592959.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;~~&lt;br&gt;
+2020/10/31更新&lt;br&gt;
+官方已上线了🏳️‍🌈🏳️‍🌈🏳️‍🌈&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1604075825809.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2管理员登录特定网址授权作废官方提供设置了&#34;&gt;&lt;s&gt;2.管理员登录特定网址授权（作废，官方提供设置了）&lt;/s&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;a、子账号登录他人部署的应用，会报出需要管理员授权&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587091316482.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;b、可以从要登录应用跳转的微软sigin in界面复制网址来提取登录应用id和redirect_uri：&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587086688972.png&#34; alt=&#34;提取信息&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;c、将提取的应用id和redirect_uri替换以下网址的部分：login.microsoftonline.com/common/adminconsent?client_id=要登录的应用ID&amp;amp;redirect_uri=要登录应用的跳转地址&lt;/li&gt;
+&lt;li&gt;d、 将替换好的网址复制到浏览器 .&lt;br&gt;
+参见&lt;a href=&#34;https://docs.microsoft.com/zh-CN/microsoft-365/admin/add-users/about-admin-roles?WT.mc_id=365AdminCSH&amp;amp;view=o365-worldwide&#34;&gt;官方文档1&lt;/a&gt;，&lt;a href=&#34;https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant&#34; title=&#34;官方文档2&#34;&gt;官方文档2&lt;/a&gt;、&lt;a href=&#34;https://docs.microsoft.com/zh-cn/graph/permissions-reference&#34; title=&#34;官方文档3&#34;&gt;官方文档3&lt;/a&gt;、&lt;a href=&#34;https://docs.microsoft.com/zh-cn/graph/auth-cloudsolutionprovider&#34; title=&#34;官方文档4*&#34;&gt;官方文档4*&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;e、修改好，用管理员账号登录，接受应用需要的授权，然后在azure中修改：&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092151066.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;f、打开组织应用&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092143391.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;g、打开所有应用，搜索之前记录的他人应用名&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092163163.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;h、以自己部署的为例，需要更换为在所有应用中搜索，我部署的应用名为teamstudy。&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092135736.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;i、点击添加用户，此处已有的一个用户为管理员&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092113693.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;j、添加允许登录的子账号&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092106702.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;li&gt;k、删除管理员授权，保证安全&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1587092099707.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;未来计划&#34;&gt;未来计划&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;（2）已检测，官方已忽略，不会识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。&lt;a href=&#34;https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/&#34;&gt;参考官方学习文档&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;（3）网上有提到，绑定自己的域名，有可能更容易保活&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;续订随缘&lt;/strong&gt;&lt;/p&gt;
+">Office 365 team API可无设备，无域名部署，以非组织内部用户调用保活</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" href="http://localhost:4000/post/about/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
+&lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
+&lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
+&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
+">关于</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<script>
+  // var escape = "[{&#34;content&#34;:&#34;&lt;p&gt;1、源代码列表&lt;br&gt;\n1.1 静态导航站源代码&lt;br&gt;\n1）&lt;img src=\&#34;http://localhost:4000/post-images/1604084069312.ico\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;猿梦极客导航https://github.com/geekape/geek-navigation/tree/json-navigation&lt;/p&gt;\n&lt;p&gt;2、免费部署资源&lt;/p&gt;\n&lt;p&gt;1）https://vercel.com/&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;dkM1P9Ma1&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;免费导航站部署资源收集&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-10-31 02:45:33&#34;,&#34;dateFormat&#34;:&#34;2020-10-31&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;http://localhost:4000/post/dkM1P9Ma1/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:11000,&#34;words&#34;:43,&#34;minutes&#34;:1},&#34;description&#34;:&#34;1、源代码列表\n1.1 静态导航站源代码\n1）猿梦极客导航https://github.com/geekape/geek-navigation/tree/json-navigation\n2、免费部署资源\n1）https://vercel.c...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;下载XShell&lt;br&gt;\n打开XShell&lt;br&gt;\n填写公网IP&lt;br&gt;\n返回Xshell,点击用户身份验证，用户名为root,输入相应的密码&lt;/p&gt;\n&lt;p&gt;1、查看服务器系统版本信息&lt;/p&gt;\n&lt;p&gt;cat /etc/issue&lt;br&gt;\n2、下载anaconda：&lt;/p&gt;\n&lt;p&gt;&#39;&#39;&#39;&lt;br&gt;\n从清华镜像https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/&lt;br&gt;\nwget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.02-Linux-x86_64.sh（不适合arm版，需要从源码编译安装，可以直接装python，用pip，或者直接装tenserflow）&lt;br&gt;\n&#39;&#39;&#39;&lt;br&gt;\n可以用minianaconda 但是没到最新版&lt;br&gt;\n3、安装anaconda&lt;/p&gt;\n&lt;p&gt;bash Anaconda3-2020.02-Linux-x86_64.sh（不适合arm架构）&lt;br&gt;\n安装其他大神编译好的&lt;br&gt;\nhttps://bbs.huaweicloud.com/forum/thread-23807-1-1.html&lt;br&gt;\nhttps://github.com/Archiconda/build-tools/releases&lt;br&gt;\nhttps://cdn.jsdelivr.net/gh/Archiconda/build-tools@0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh&lt;/p&gt;\n&lt;p&gt;基于鲲鹏 Ubuntu 18.04安装Tensorflow 1.4.1&lt;br&gt;\nhttps://bbs.huaweicloud.com/forum/thread-23713-1-1.html&lt;/p&gt;\n&lt;p&gt;配置ftp&lt;br&gt;\nhttps://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html&lt;br&gt;\nhttps://support.huaweicloud.com/ecs_faq/zh-cn_topic_0170139796.html&lt;/p&gt;\n&lt;p&gt;mysql&lt;br&gt;\nhttps://bbs.huaweicloud.com/forum/thread-24680-1-1.html&lt;br&gt;\nhttps://dev.mysql.com/downloads/mysql/&lt;/p&gt;\n&lt;p&gt;部署&lt;br&gt;\nhttps://github.com/cloudreve/Cloudreve&lt;br&gt;\nhttps://docs.cloudreve.org/&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;tNkyvNpJT&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;配置华为云&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-05-25 23:54:47&#34;,&#34;dateFormat&#34;:&#34;2020-05-25&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;http://localhost:4000/post/tNkyvNpJT/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;2 min read&#34;,&#34;time&#34;:75000,&#34;words&#34;:251,&#34;minutes&#34;:2},&#34;description&#34;:&#34;下载XShell\n打开XShell\n填写公网IP\n返回Xshell,点击用户身份验证，用户名为root,输入相应的密码\n1、查看服务器系统版本信息\ncat /etc/issue\n2、下载anaconda：\n&#39;&#39;&#39;\n从清华镜像https://...&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;IDM定时探嗅oneindex站点，调用api&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;pVvhUoSzv&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;IDM定时探嗅oneindex站点，调用api&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-04-22 11:28:49&#34;,&#34;dateFormat&#34;:&#34;2020-04-22&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;http://localhost:4000/post/pVvhUoSzv/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:2000,&#34;words&#34;:10,&#34;minutes&#34;:1},&#34;description&#34;:&#34;IDM定时探嗅oneindex站点，调用api\n&#34;,&#34;toc&#34;:&#34;&#34;},{&#34;content&#34;:&#34;&lt;p&gt;小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;h1 id=\&#34;问题描述\&#34;&gt;&lt;strong&gt;问题描述&lt;/strong&gt;&lt;/h1&gt;\n&lt;p&gt;-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台重建缓存，刷新refresh token，才能重新访问onedrive。&lt;/p&gt;\n&lt;p&gt;-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。&lt;/p&gt;\n&lt;h1 id=\&#34;在后台瞎设置\&#34;&gt;&lt;strong&gt;在后台瞎设置&lt;/strong&gt;&lt;/h1&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;1\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587212919814.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;p&gt;3、（2020/10/31更新）infinityfree免费主机，可配置定时任务，5秒真男人，刷新oneindex，还能有3个月的ssl。&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;dMbiPACR5&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;（非专业操作）免费空间维持oneindex 长期授权的缓存设置&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2020-04-17 22:14:11&#34;,&#34;dateFormat&#34;:&#34;2020-04-17&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;http://localhost:4000/post/dMbiPACR5/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:38000,&#34;words&#34;:178,&#34;minutes&#34;:1},&#34;description&#34;:&#34;小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。\n\n问题描述\n-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0\&#34;&gt;&lt;strong&gt;问题描述&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%9C%A8%E5%90%8E%E5%8F%B0%E7%9E%8E%E8%AE%BE%E7%BD%AE\&#34;&gt;&lt;strong&gt;在后台瞎设置&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;p&gt;&lt;strong&gt;拜请诸方大佬，各显神通，有缘续订&lt;/strong&gt;&lt;br&gt;\n&lt;strong&gt;2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用&lt;/strong&gt;&lt;br&gt;\n&lt;strong&gt;2020/12/17 更新，不好的消息：E5开发订阅开发软件，只支持自己组织账号登录&lt;/strong&gt;&lt;/p&gt;\n&lt;!-- more --&gt;\n&lt;h1 id=\&#34;特别致谢\&#34;&gt;特别致谢&lt;/h1&gt;\n&lt;p&gt;-（1）感谢 &lt;a href=\&#34;https://blog.curlc.com/archives/687.html\&#34;&gt;浅忆博客&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;-（2）感谢浅忆博客-E5技术交流群的群友：&lt;strong&gt;别恋&lt;/strong&gt;，&lt;strong&gt;流浪&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;a href=\&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=52yJp9C\&#34;&gt;点击此加入群聊【E5技术交流群】&lt;/a&gt;&lt;/p&gt;\n&lt;h1 id=\&#34;成功示例\&#34;&gt;成功示例&lt;/h1&gt;\n&lt;p&gt;-（1）github+render动态部署（支持nodejs，在线编译）：&lt;a href=\&#34;https://teamstudy.onrender.com/\&#34;&gt;https://teamstudy.onrender.com/&lt;/a&gt;&lt;/p&gt;\n&lt;p&gt;-（2）国内外免费空间，上传静态文件部署，例如免费空间吧，如&lt;a href=\&#34;https://now.sh\&#34;&gt;https://now.sh&lt;/a&gt;）&lt;/p&gt;\n&lt;h1 id=\&#34;特别说明\&#34;&gt;特别说明&lt;/h1&gt;\n&lt;p&gt;-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。&lt;/p&gt;\n&lt;p&gt;-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。&lt;/p&gt;\n&lt;p&gt;-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为 https://localhost:3000/，不然可能退出后跳转报错。&lt;/p&gt;\n&lt;p&gt;-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。&lt;/p&gt;\n&lt;p&gt;-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。&lt;/p&gt;\n&lt;h1 id=\&#34;前期基础\&#34;&gt;前期基础&lt;/h1&gt;\n&lt;p&gt;（1）参考 &lt;strong&gt;浅忆博客&lt;/strong&gt;：&lt;a href=\&#34;https://blog.curlc.com/archives/599.html\&#34;&gt;新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)&lt;/a&gt;。申请office 365 开发者订阅。&lt;/p&gt;\n&lt;p&gt;（2）参考 &lt;strong&gt;啊哈程序&lt;/strong&gt;：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。&lt;/p&gt;\n&lt;h1 id=\&#34;可选的三种部署路线\&#34;&gt;可选的三种部署路线&lt;/h1&gt;\n&lt;h2 id=\&#34;1githubrender或httpsvercelcom还未测试简单可在线拉取官方更新在线升级\&#34;&gt;（1）github+render（或https://vercel.com/，还未测试）（简单，可在线拉取官方更新在线升级）。&lt;/h2&gt;\n&lt;p&gt;&lt;strong&gt;github拉取officedev官方码，修改成自己授权的ID，render在线编译部署网页&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;p&gt;a、 注册&lt;a href=\&#34;https://github.com/\&#34;&gt;github&lt;/a&gt;；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;b、 拉取(页面右上角Fork)官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID（按下文创建应用，获得应用ID）；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;c、 用自己github账号注册&lt;a href=\&#34;https://render.com/\&#34;&gt;render&lt;/a&gt;；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;d、 在render中选择自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。&lt;/p&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h2 id=\&#34;2githubgithub-page最简单需本地编译官方更新替换静态文件升级\&#34;&gt;（2）github+github page（最简单，需本地编译官方更新，替换静态文件升级）&lt;/h2&gt;\n&lt;p&gt;&lt;strong&gt;github拉取(页面右上角Fork)博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;p&gt;a、 注册&lt;a href=\&#34;https://github.com/\&#34;&gt;github&lt;/a&gt;；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;b、 拉取博主编译好的静态网页的存储库，网址为：&lt;a href=\&#34;https://github.com/setdiaoyong/teamAPI\&#34;&gt;https://github.com/setdiaoyong/teamAPI&lt;/a&gt;，按照说明，修改成自己授权应用ID；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；&lt;/p&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h2 id=\&#34;3自有空间域名部署要求高需本地编译官方更新替换静态文件升级\&#34;&gt;（3）自有空间域名部署（要求高，需本地编译官方更新，替换静态文件升级）&lt;/h2&gt;\n&lt;p&gt;&lt;strong&gt;要在自己空间、和https连接的域名下部署，可下载编译好的网页静态文件，修改成自己授权的应用ID，自行部署&lt;/strong&gt;&lt;br&gt;\n（2020/10/31更新，推荐&lt;a href=\&#34;https://vercel.com/\&#34;&gt;https://vercel.com/&lt;/a&gt;，提供免费空间，和https访问，可直接用github账户登录，拉取我的github账户中的静态文件，直接部署。）&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;p&gt;a、 注册&lt;a href=\&#34;https://github.com/\&#34;&gt;github&lt;/a&gt;；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;b、 下载网址为：&lt;a href=\&#34;https://github.com/setdiaoyong/teamAPI\&#34;&gt;https://github.com/setdiaoyong/teamAPI&lt;/a&gt;，点击绿色下载按钮，下载zip；&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。&lt;/p&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h1 id=\&#34;首先创建应用及授权\&#34;&gt;首先创建应用及授权&lt;/h1&gt;\n&lt;p&gt;参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）&lt;/p&gt;\n&lt;p&gt;个人设置截图如下：（2020/10/31开始更新，微软重构了Azure portal的界面，有点不一样了，后面有空再更新，之前无法设置组织内用户添加组织外应用，现在上线啦，感觉我的这个方法可能更有前途，多找一些人，使用自己上线的这team中转应用，其实就是个官方示例的开始界面《手动捂脸》）&lt;/p&gt;\n&lt;p&gt;-（1）在 &lt;a href=\&#34;https://portal.azure.com/\&#34;&gt;Azure portal&lt;/a&gt; 注册应用并授权API&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587086835316.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs填 https://localhost:3000/（http后s最好加）&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;1\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587086887866.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加，上一步已填好）；2、Redirect URIs再点击 add URL填上自己要部署https网址，如我的https://teamstudy.onrender.com/（以后可修改，或等render给出网址再添加填写），或部署在githubpage，就填github page唯一网址：https://&amp;lt;自己用户名&amp;gt;.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587086915551.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n源代码中有退出跳转网址路径&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587087829180.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;c、复制应用ID，待用，进入API授权设置&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;2\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587086943633.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;d、设置用户调用api，搜索online，选择readwrite权限&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;3\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087016393.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;e、根据个人使用账户权限，可能要管理员授权使用该API，可以在右上角切换管理员账户，&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;4\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087033373.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;f、点击进行管理员授权&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087047023.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;br&gt;\n-（额外提示）一个ID可以对应多个自己部署的https:域名，在web （经群友&lt;strong&gt;别恋&lt;/strong&gt;验证）&lt;/p&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;5\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087067227.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;h1 id=\&#34;网页部署\&#34;&gt;网页部署&lt;/h1&gt;\n&lt;h2 id=\&#34;1githubrender在线编译部署\&#34;&gt;（1）github+render在线编译部署&lt;/h2&gt;\n&lt;ul&gt;\n&lt;li&gt;a、 拉取官方项目库&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;6\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087158259.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;b、 找到文件，点击修改， 修改成自己的应用ID&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587095993662.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;7\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087385884.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;c、 用拉取的github账号登录render, 创建web空间，选择修改好应用ID的自己github库&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;8\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087523215.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;9\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087458844.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;p&gt;d、 自动识别项目，填写名称，该名称就是给出网址的二级域名，其他无需更改，直接点击确认。&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587096508631.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;e、部署成功后，就给出访问网址，填写到之前应用授权处。&lt;/p&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;10\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087616891.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;h2 id=\&#34;2githubgithub-page部署\&#34;&gt;（2）github+github Page部署&lt;/h2&gt;\n&lt;ul&gt;\n&lt;li&gt;a、拉取博主github上传编译好的网页文件：网址为：github.com/setdiaoyong/setdiaoyong.github.io (手动复制到浏览器）&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;11\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087673518.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;\n&lt;p&gt;b、在github网页中打开static\\js，分别搜索main.b09a1c35.chunk.js和main.b09a1c35.chunk.js.map ，打开后，点击右上角笔图标，进行编辑，分别搜索 {授权appID} ，将 {授权appID}  连 {}挂号 一起替换成至自己设置好的app ID&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587087271380.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;/li&gt;\n&lt;li&gt;\n&lt;p&gt;c、修改库名为：自己github用户名.github.io&lt;/p&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;12\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087703757.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;d、修改好，滚动本页到下方，可以看到，访问地址，即可访问&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;13\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087873568.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;p&gt;##（3）自由空间域名部署及设置参照github page部署方法&lt;/p&gt;\n&lt;h1 id=\&#34;访问网页\&#34;&gt;访问网页&lt;/h1&gt;\n&lt;ul&gt;\n&lt;li&gt;a、在浏览器隐私模式中（防止自动登录影响），访问部署成功的网址&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;14\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087924283.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;b、登录账户，不报错，不闪退，跳转进入如下界面&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;15\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587087952044.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;ul&gt;\n&lt;li&gt;c、创建一个meeting，此次省略截图，完成调用，也继续可跳转到web端的team视频会议软件体验一下&lt;/li&gt;\n&lt;/ul&gt;\n&lt;figure data-type=\&#34;image\&#34; tabindex=\&#34;16\&#34;&gt;&lt;img src=\&#34;http://localhost:4000/post-images/1587088091091.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/figure&gt;\n&lt;h1 id=\&#34;问题解决\&#34;&gt;问题解决&lt;/h1&gt;\n&lt;ul&gt;\n&lt;li&gt;a、关键是授权设置，注意用设置登录类型范围内的账户登录，&lt;/li&gt;\n&lt;li&gt;b、如果登录报错，要看具体错误类型，再回去修改授权，未设置好Redirect URIs，会提示Redirect URIs不符合&lt;/li&gt;\n&lt;li&gt;c、如果登录闪退，隐式授权access token 和ID token 未勾选&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;注：感谢浅忆博客-E5技术交流群的群友：&lt;strong&gt;别恋&lt;/strong&gt;，&lt;strong&gt;流浪&lt;/strong&gt; 提供了反馈。&lt;/p&gt;\n&lt;h1 id=\&#34;邀请他人注册调用的授权设置官方已对e5开发者订阅完全限制只能组织内子账号调用部署的应用\&#34;&gt;邀请他人注册调用的授权设置（官方已对E5开发者订阅完全限制，只能组织内子账号调用部署的应用）&lt;/h1&gt;\n&lt;h2 id=\&#34;1管理员中心设置允许非管理员用户添加官方已上线\&#34;&gt;1.管理员中心设置允许非管理员用户添加（官方已上线）&lt;/h2&gt;\n&lt;p&gt;&lt;s&gt;（官方preview）&lt;br&gt;\n官方还在开发，设置后无法保存。&lt;/s&gt;~~&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587295592959.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;~~&lt;br&gt;\n2020/10/31更新&lt;br&gt;\n官方已上线了🏳️‍🌈🏳️‍🌈🏳️‍🌈&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1604075825809.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/p&gt;\n&lt;h2 id=\&#34;2管理员登录特定网址授权作废官方提供设置了\&#34;&gt;&lt;s&gt;2.管理员登录特定网址授权（作废，官方提供设置了）&lt;/s&gt;&lt;/h2&gt;\n&lt;ul&gt;\n&lt;li&gt;a、子账号登录他人部署的应用，会报出需要管理员授权&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587091316482.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;b、可以从要登录应用跳转的微软sigin in界面复制网址来提取登录应用id和redirect_uri：&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587086688972.png\&#34; alt=\&#34;提取信息\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;c、将提取的应用id和redirect_uri替换以下网址的部分：login.microsoftonline.com/common/adminconsent?client_id=要登录的应用ID&amp;amp;redirect_uri=要登录应用的跳转地址&lt;/li&gt;\n&lt;li&gt;d、 将替换好的网址复制到浏览器 .&lt;br&gt;\n参见&lt;a href=\&#34;https://docs.microsoft.com/zh-CN/microsoft-365/admin/add-users/about-admin-roles?WT.mc_id=365AdminCSH&amp;amp;view=o365-worldwide\&#34;&gt;官方文档1&lt;/a&gt;，&lt;a href=\&#34;https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant\&#34; title=\&#34;官方文档2\&#34;&gt;官方文档2&lt;/a&gt;、&lt;a href=\&#34;https://docs.microsoft.com/zh-cn/graph/permissions-reference\&#34; title=\&#34;官方文档3\&#34;&gt;官方文档3&lt;/a&gt;、&lt;a href=\&#34;https://docs.microsoft.com/zh-cn/graph/auth-cloudsolutionprovider\&#34; title=\&#34;官方文档4*\&#34;&gt;官方文档4*&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;e、修改好，用管理员账号登录，接受应用需要的授权，然后在azure中修改：&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092151066.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;f、打开组织应用&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092143391.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;g、打开所有应用，搜索之前记录的他人应用名&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092163163.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;h、以自己部署的为例，需要更换为在所有应用中搜索，我部署的应用名为teamstudy。&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092135736.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;i、点击添加用户，此处已有的一个用户为管理员&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092113693.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;j、添加允许登录的子账号&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092106702.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;li&gt;k、删除管理员授权，保证安全&lt;br&gt;\n&lt;img src=\&#34;http://localhost:4000/post-images/1587092099707.png\&#34; alt=\&#34;\&#34; loading=\&#34;lazy\&#34;&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;h1 id=\&#34;未来计划\&#34;&gt;未来计划&lt;/h1&gt;\n&lt;p&gt;&lt;strong&gt;（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;（2）已检测，官方已忽略，不会识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。&lt;a href=\&#34;https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/\&#34;&gt;参考官方学习文档&lt;/a&gt;。&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;（3）网上有提到，绑定自己的域名，有可能更容易保活&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;续订随缘&lt;/strong&gt;&lt;/p&gt;\n&#34;,&#34;fileName&#34;:&#34;mYQjpWO-3&#34;,&#34;abstract&#34;:&#34;&lt;p&gt;&lt;strong&gt;拜请诸方大佬，各显神通，有缘续订&lt;/strong&gt;&lt;br&gt;\n&lt;strong&gt;2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用&lt;/strong&gt;&lt;br&gt;\n&lt;strong&gt;2020/12/17 更新，不好的消息：E5开发订阅开发软件，只支持自己组织账号登录&lt;/strong&gt;&lt;/p&gt;\n&#34;,&#34;title&#34;:&#34;Office 365 team API可无设备，无域名部署，以非组织内部用户调用保活&#34;,&#34;tags&#34;:[{&#34;name&#34;:&#34;office365 API 保活&#34;,&#34;slug&#34;:&#34;t71kEAhYi&#34;,&#34;used&#34;:true,&#34;link&#34;:&#34;http://localhost:4000/t71kEAhYi/&#34;}],&#34;date&#34;:&#34;2020-04-17 08:39:54&#34;,&#34;dateFormat&#34;:&#34;2020-04-17&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;http://localhost:4000/post/mYQjpWO-3/&#34;,&#34;hideInList&#34;:false,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;10 min read&#34;,&#34;time&#34;:568000,&#34;words&#34;:2554,&#34;minutes&#34;:10},&#34;description&#34;:&#34;拜请诸方大佬，各显神通，有缘续订\n2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用\n2020/12/17 更新，不好的消息：E5开发订阅开发软件，只支持自己组织账号登录\n\n特别致谢\n-（1）感谢 ...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E7%89%B9%E5%88%AB%E8%87%B4%E8%B0%A2\&#34;&gt;特别致谢&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%88%90%E5%8A%9F%E7%A4%BA%E4%BE%8B\&#34;&gt;成功示例&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E\&#34;&gt;特别说明&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%89%8D%E6%9C%9F%E5%9F%BA%E7%A1%80\&#34;&gt;前期基础&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%8F%AF%E9%80%89%E7%9A%84%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E8%B7%AF%E7%BA%BF\&#34;&gt;可选的三种部署路线&lt;/a&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#1githubrender%E6%88%96httpsvercelcom%E8%BF%98%E6%9C%AA%E6%B5%8B%E8%AF%95%E7%AE%80%E5%8D%95%E5%8F%AF%E5%9C%A8%E7%BA%BF%E6%8B%89%E5%8F%96%E5%AE%98%E6%96%B9%E6%9B%B4%E6%96%B0%E5%9C%A8%E7%BA%BF%E5%8D%87%E7%BA%A7\&#34;&gt;（1）github+render（或https://vercel.com/，还未测试）（简单，可在线拉取官方更新在线升级）。&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#2githubgithub-page%E6%9C%80%E7%AE%80%E5%8D%95%E9%9C%80%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E5%AE%98%E6%96%B9%E6%9B%B4%E6%96%B0%E6%9B%BF%E6%8D%A2%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E5%8D%87%E7%BA%A7\&#34;&gt;（2）github+github page（最简单，需本地编译官方更新，替换静态文件升级）&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#3%E8%87%AA%E6%9C%89%E7%A9%BA%E9%97%B4%E5%9F%9F%E5%90%8D%E9%83%A8%E7%BD%B2%E8%A6%81%E6%B1%82%E9%AB%98%E9%9C%80%E6%9C%AC%E5%9C%B0%E7%BC%96%E8%AF%91%E5%AE%98%E6%96%B9%E6%9B%B4%E6%96%B0%E6%9B%BF%E6%8D%A2%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E5%8D%87%E7%BA%A7\&#34;&gt;（3）自有空间域名部署（要求高，需本地编译官方更新，替换静态文件升级）&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%A6%96%E5%85%88%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E5%8F%8A%E6%8E%88%E6%9D%83\&#34;&gt;首先创建应用及授权&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E7%BD%91%E9%A1%B5%E9%83%A8%E7%BD%B2\&#34;&gt;网页部署&lt;/a&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#1githubrender%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%AF%91%E9%83%A8%E7%BD%B2\&#34;&gt;（1）github+render在线编译部署&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#2githubgithub-page%E9%83%A8%E7%BD%B2\&#34;&gt;（2）github+github Page部署&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E8%AE%BF%E9%97%AE%E7%BD%91%E9%A1%B5\&#34;&gt;访问网页&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3\&#34;&gt;问题解决&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E9%82%80%E8%AF%B7%E4%BB%96%E4%BA%BA%E6%B3%A8%E5%86%8C%E8%B0%83%E7%94%A8%E7%9A%84%E6%8E%88%E6%9D%83%E8%AE%BE%E7%BD%AE%E5%AE%98%E6%96%B9%E5%B7%B2%E5%AF%B9e5%E5%BC%80%E5%8F%91%E8%80%85%E8%AE%A2%E9%98%85%E5%AE%8C%E5%85%A8%E9%99%90%E5%88%B6%E5%8F%AA%E8%83%BD%E7%BB%84%E7%BB%87%E5%86%85%E5%AD%90%E8%B4%A6%E5%8F%B7%E8%B0%83%E7%94%A8%E9%83%A8%E7%BD%B2%E7%9A%84%E5%BA%94%E7%94%A8\&#34;&gt;邀请他人注册调用的授权设置（官方已对E5开发者订阅完全限制，只能组织内子账号调用部署的应用）&lt;/a&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#1%E7%AE%A1%E7%90%86%E5%91%98%E4%B8%AD%E5%BF%83%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E9%9D%9E%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0%E5%AE%98%E6%96%B9%E5%B7%B2%E4%B8%8A%E7%BA%BF\&#34;&gt;1.管理员中心设置允许非管理员用户添加（官方已上线）&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#2%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95%E7%89%B9%E5%AE%9A%E7%BD%91%E5%9D%80%E6%8E%88%E6%9D%83%E4%BD%9C%E5%BA%9F%E5%AE%98%E6%96%B9%E6%8F%90%E4%BE%9B%E8%AE%BE%E7%BD%AE%E4%BA%86\&#34;&gt;&lt;s&gt;2.管理员登录特定网址授权（作废，官方提供设置了）&lt;/s&gt;&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E6%9C%AA%E6%9D%A5%E8%AE%A1%E5%88%92\&#34;&gt;未来计划&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&#34;},{&#34;content&#34;:&#34;&lt;blockquote&gt;\n&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;\n&lt;/blockquote&gt;\n&lt;h2 id=\&#34;关于本站\&#34;&gt;🏠 关于本站&lt;/h2&gt;\n&lt;h2 id=\&#34;博主是谁\&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;\n&lt;h2 id=\&#34;兴趣爱好\&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;\n&lt;h2 id=\&#34;联系我呀\&#34;&gt;📬 联系我呀&lt;/h2&gt;\n&#34;,&#34;fileName&#34;:&#34;about&#34;,&#34;abstract&#34;:&#34;&#34;,&#34;title&#34;:&#34;关于&#34;,&#34;tags&#34;:[],&#34;date&#34;:&#34;2019-01-25 19:09:48&#34;,&#34;dateFormat&#34;:&#34;2019-01-25&#34;,&#34;feature&#34;:&#34;&#34;,&#34;link&#34;:&#34;http://localhost:4000/post/about/&#34;,&#34;hideInList&#34;:true,&#34;isTop&#34;:false,&#34;stats&#34;:{&#34;text&#34;:&#34;1 min read&#34;,&#34;time&#34;:6000,&#34;words&#34;:31,&#34;minutes&#34;:1},&#34;description&#34;:&#34;\n欢迎来到我的小站呀，很高兴遇见你！🤝\n\n🏠 关于本站\n👨‍💻 博主是谁\n⛹ 兴趣爱好\n📬 联系我呀\n...&#34;,&#34;toc&#34;:&#34;&lt;ul class=\&#34;markdownIt-TOC\&#34;&gt;\n&lt;li&gt;\n&lt;ul&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99\&#34;&gt;🏠 关于本站&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81\&#34;&gt;👨‍💻 博主是谁&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD\&#34;&gt;⛹ 兴趣爱好&lt;/a&gt;&lt;/li&gt;\n&lt;li&gt;&lt;a href=\&#34;#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80\&#34;&gt;📬 联系我呀&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/li&gt;\n&lt;/ul&gt;\n&#34;}]";
+  // var json = escape.substr(1, escape.length - 2);
+  // var datas = json.split(',');
+  // for (let i=0; i < datas.length; i++) {
+  //   let item = datas[i];
+  //   let attrs = item.split('34;:&#34')
+  //   debugger
+  //   console.log(datas[i])
+  // }
+  let escapeMap = new Map();
+  escapeMap.set('&#34;', '"');
+  escapeMap.set('&gt;', '>');
+  escapeMap.set('&#39;', "'");
+  escapeMap.set('&lt;', '<');
+  escapeMap.set('&quot;', '"');
+  escapeMap.set('&amp;', '&');
+</script> -->
+
+<script src="/media/js/mouse/love.js"></script>
+
+
+</html>

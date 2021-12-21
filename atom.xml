@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://localhost:4000</id>
+    <title>凤梧山居</title>
+    <updated>2021-12-21T04:47:38.871Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <subtitle>大隐于市者，能</subtitle>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
+    <rights>All rights reserved 2021, 凤梧山居</rights>
+    <entry>
+        <title type="html"><![CDATA[免费导航站部署资源收集]]></title>
+        <id>http://localhost:4000/post/dkM1P9Ma1/</id>
+        <link href="http://localhost:4000/post/dkM1P9Ma1/">
+        </link>
+        <updated>2020-10-30T18:45:33.000Z</updated>
+        <content type="html"><![CDATA[<p>1、源代码列表<br>
+1.1 静态导航站源代码<br>
+1）<img src="http://localhost:4000/post-images/1604084069312.ico" alt="" loading="lazy">猿梦极客导航https://github.com/geekape/geek-navigation/tree/json-navigation</p>
+<p>2、免费部署资源</p>
+<p>1）https://vercel.com/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[配置华为云]]></title>
+        <id>http://localhost:4000/post/tNkyvNpJT/</id>
+        <link href="http://localhost:4000/post/tNkyvNpJT/">
+        </link>
+        <updated>2020-05-25T15:54:47.000Z</updated>
+        <content type="html"><![CDATA[<p>下载XShell<br>
+打开XShell<br>
+填写公网IP<br>
+返回Xshell,点击用户身份验证，用户名为root,输入相应的密码</p>
+<p>1、查看服务器系统版本信息</p>
+<p>cat /etc/issue<br>
+2、下载anaconda：</p>
+<p>'''<br>
+从清华镜像https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/<br>
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2020.02-Linux-x86_64.sh（不适合arm版，需要从源码编译安装，可以直接装python，用pip，或者直接装tenserflow）<br>
+'''<br>
+可以用minianaconda 但是没到最新版<br>
+3、安装anaconda</p>
+<p>bash Anaconda3-2020.02-Linux-x86_64.sh（不适合arm架构）<br>
+安装其他大神编译好的<br>
+https://bbs.huaweicloud.com/forum/thread-23807-1-1.html<br>
+https://github.com/Archiconda/build-tools/releases<br>
+https://cdn.jsdelivr.net/gh/Archiconda/build-tools@0.2.3/Archiconda3-0.2.3-Linux-aarch64.sh</p>
+<p>基于鲲鹏 Ubuntu 18.04安装Tensorflow 1.4.1<br>
+https://bbs.huaweicloud.com/forum/thread-23713-1-1.html</p>
+<p>配置ftp<br>
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0166284971.html<br>
+https://support.huaweicloud.com/ecs_faq/zh-cn_topic_0170139796.html</p>
+<p>mysql<br>
+https://bbs.huaweicloud.com/forum/thread-24680-1-1.html<br>
+https://dev.mysql.com/downloads/mysql/</p>
+<p>部署<br>
+https://github.com/cloudreve/Cloudreve<br>
+https://docs.cloudreve.org/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IDM定时探嗅oneindex站点，调用api]]></title>
+        <id>http://localhost:4000/post/pVvhUoSzv/</id>
+        <link href="http://localhost:4000/post/pVvhUoSzv/">
+        </link>
+        <updated>2020-04-22T03:28:49.000Z</updated>
+        <content type="html"><![CDATA[<p>IDM定时探嗅oneindex站点，调用api</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（非专业操作）免费空间维持oneindex 长期授权的缓存设置]]></title>
+        <id>http://localhost:4000/post/dMbiPACR5/</id>
+        <link href="http://localhost:4000/post/dMbiPACR5/">
+        </link>
+        <updated>2020-04-17T14:14:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
+<!-- more -->
+<h1 id="问题描述"><strong>问题描述</strong></h1>
+<p>-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台重建缓存，刷新refresh token，才能重新访问onedrive。</p>
+<p>-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。</p>
+<h1 id="在后台瞎设置"><strong>在后台瞎设置</strong></h1>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1587212919814.png" alt="" loading="lazy"></figure>
+<p>3、（2020/10/31更新）infinityfree免费主机，可配置定时任务，5秒真男人，刷新oneindex，还能有3个月的ssl。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Office 365 team API可无设备，无域名部署，以非组织内部用户调用保活]]></title>
+        <id>http://localhost:4000/post/mYQjpWO-3/</id>
+        <link href="http://localhost:4000/post/mYQjpWO-3/">
+        </link>
+        <updated>2020-04-17T00:39:54.000Z</updated>
+        <summary type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong><br>
+<strong>2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用</strong><br>
+<strong>2020/12/17 更新，不好的消息：E5开发订阅开发软件，只支持自己组织账号登录</strong></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong><br>
+<strong>2020/10/31更新，喜讯：微软官方上线可设置非管理员的用户直接允许添加非组织开发的应用</strong><br>
+<strong>2020/12/17 更新，不好的消息：E5开发订阅开发软件，只支持自己组织账号登录</strong></p>
+<!-- more -->
+<h1 id="特别致谢">特别致谢</h1>
+<p>-（1）感谢 <a href="https://blog.curlc.com/archives/687.html">浅忆博客</a></p>
+<p>-（2）感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong></p>
+<p><a href="https://jq.qq.com/?_wv=1027&amp;k=52yJp9C">点击此加入群聊【E5技术交流群】</a></p>
+<h1 id="成功示例">成功示例</h1>
+<p>-（1）github+render动态部署（支持nodejs，在线编译）：<a href="https://teamstudy.onrender.com/">https://teamstudy.onrender.com/</a></p>
+<p>-（2）国内外免费空间，上传静态文件部署，例如免费空间吧，如<a href="https://now.sh">https://now.sh</a>）</p>
+<h1 id="特别说明">特别说明</h1>
+<p>-（1）非自动调用API，靠注册用户调用api保活，该活动信息可能不会在管理员用户活跃统计图中显示，不喜勿用。</p>
+<p>-（2）一定要设置好应用授权，web 跳转地址Redirect URIs，和，API授权，隐式授权等，不然用户登录界面报错，或闪退，以及退出后跳转报错。</p>
+<p>-（3）如果要用自己域名，需要设置ssl的https安全连接，不然在应用授权中心无法设置跳转网址Redirect URIs。还要设置Logout URL为 https://localhost:3000/，不然可能退出后跳转报错。</p>
+<p>-（4）个人账户只能登录team app，无法创建会议，只能用学校和工作账号登录进行创建，自己创建的自己组织所有子账户无需管理员授权即可登录，但他人管理员账号登录即可授权，但他人子账号登录，需要其管理员对子账号进行授权，跳转本文第7小节，设置管理员授权。</p>
+<p>-（5）具体设置参照官方项目说明，根据自己测试添加，如果不清楚，请移步官方项目github库github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）。</p>
+<h1 id="前期基础">前期基础</h1>
+<p>（1）参考 <strong>浅忆博客</strong>：<a href="https://blog.curlc.com/archives/599.html">新版可续签的Office 365开发者试用订阅！E5(附自动续订的方法)</a>。申请office 365 开发者订阅。</p>
+<p>（2）参考 <strong>啊哈程序</strong>：[Github Page---- 搭建个人博客] 网址：blog.csdn.net/yuexianchang/article/details/53431703 (手动复制到浏览器）。</p>
+<h1 id="可选的三种部署路线">可选的三种部署路线</h1>
+<h2 id="1githubrender或httpsvercelcom还未测试简单可在线拉取官方更新在线升级">（1）github+render（或https://vercel.com/，还未测试）（简单，可在线拉取官方更新在线升级）。</h2>
+<p><strong>github拉取officedev官方码，修改成自己授权的ID，render在线编译部署网页</strong></p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 拉取(页面右上角Fork)官方源代码，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）修改成自己授权应用ID（按下文创建应用，获得应用ID）；</p>
+</li>
+<li>
+<p>c、 用自己github账号注册<a href="https://render.com/">render</a>；</p>
+</li>
+<li>
+<p>d、 在render中选择自己修改好的，自动识别参数，直接网页最后确认，即可部署网页。</p>
+</li>
+</ul>
+<h2 id="2githubgithub-page最简单需本地编译官方更新替换静态文件升级">（2）github+github page（最简单，需本地编译官方更新，替换静态文件升级）</h2>
+<p><strong>github拉取(页面右上角Fork)博主编上传的编译好的网页文件，在github修改成自己授权的应用ID，用github page部署静态网页。</strong></p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 拉取博主编译好的静态网页的存储库，网址为：<a href="https://github.com/setdiaoyong/teamAPI">https://github.com/setdiaoyong/teamAPI</a>，按照说明，修改成自己授权应用ID；</p>
+</li>
+<li>
+<p>c、 在Settings中修改库名为：自己github用户名.github.io。然后自动就部署成网页，访问网址为：https://github用户名.github.io；</p>
+</li>
+</ul>
+<h2 id="3自有空间域名部署要求高需本地编译官方更新替换静态文件升级">（3）自有空间域名部署（要求高，需本地编译官方更新，替换静态文件升级）</h2>
+<p><strong>要在自己空间、和https连接的域名下部署，可下载编译好的网页静态文件，修改成自己授权的应用ID，自行部署</strong><br>
+（2020/10/31更新，推荐<a href="https://vercel.com/">https://vercel.com/</a>，提供免费空间，和https访问，可直接用github账户登录，拉取我的github账户中的静态文件，直接部署。）</p>
+<ul>
+<li>
+<p>a、 注册<a href="https://github.com/">github</a>；</p>
+</li>
+<li>
+<p>b、 下载网址为：<a href="https://github.com/setdiaoyong/teamAPI">https://github.com/setdiaoyong/teamAPI</a>，点击绿色下载按钮，下载zip；</p>
+</li>
+<li>
+<p>c、 上传到自有空间，按照说明，修改成自己授权应用ID，即可。</p>
+</li>
+</ul>
+<h1 id="首先创建应用及授权">首先创建应用及授权</h1>
+<p>参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）</p>
+<p>个人设置截图如下：（2020/10/31开始更新，微软重构了Azure portal的界面，有点不一样了，后面有空再更新，之前无法设置组织内用户添加组织外应用，现在上线啦，感觉我的这个方法可能更有前途，多找一些人，使用自己上线的这team中转应用，其实就是个官方示例的开始界面《手动捂脸》）</p>
+<p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用并授权API<br>
+<img src="http://localhost:4000/post-images/1587086835316.png" alt="" loading="lazy"></p>
+<ul>
+<li>a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs填 https://localhost:3000/（http后s最好加）</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1587086887866.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加，上一步已填好）；2、Redirect URIs再点击 add URL填上自己要部署https网址，如我的https://teamstudy.onrender.com/（以后可修改，或等render给出网址再添加填写），或部署在githubpage，就填github page唯一网址：https://&lt;自己用户名&gt;.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。</li>
+</ul>
+<p><img src="http://localhost:4000/post-images/1587086915551.png" alt="" loading="lazy"><br>
+源代码中有退出跳转网址路径<br>
+<img src="http://localhost:4000/post-images/1587087829180.png" alt="" loading="lazy"></p>
+<ul>
+<li>c、复制应用ID，待用，进入API授权设置</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1587086943633.png" alt="" loading="lazy"></figure>
+<ul>
+<li>d、设置用户调用api，搜索online，选择readwrite权限</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="http://localhost:4000/post-images/1587087016393.png" alt="" loading="lazy"></figure>
+<ul>
+<li>e、根据个人使用账户权限，可能要管理员授权使用该API，可以在右上角切换管理员账户，</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="http://localhost:4000/post-images/1587087033373.png" alt="" loading="lazy"></figure>
+<ul>
+<li>f、点击进行管理员授权</li>
+</ul>
+<p><img src="http://localhost:4000/post-images/1587087047023.png" alt="" loading="lazy"><br>
+-（额外提示）一个ID可以对应多个自己部署的https:域名，在web （经群友<strong>别恋</strong>验证）</p>
+<figure data-type="image" tabindex="5"><img src="http://localhost:4000/post-images/1587087067227.png" alt="" loading="lazy"></figure>
+<h1 id="网页部署">网页部署</h1>
+<h2 id="1githubrender在线编译部署">（1）github+render在线编译部署</h2>
+<ul>
+<li>a、 拉取官方项目库</li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="http://localhost:4000/post-images/1587087158259.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、 找到文件，点击修改， 修改成自己的应用ID<br>
+<img src="http://localhost:4000/post-images/1587095993662.png" alt="" loading="lazy"></li>
+</ul>
+<figure data-type="image" tabindex="7"><img src="http://localhost:4000/post-images/1587087385884.png" alt="" loading="lazy"></figure>
+<ul>
+<li>c、 用拉取的github账号登录render, 创建web空间，选择修改好应用ID的自己github库</li>
+</ul>
+<figure data-type="image" tabindex="8"><img src="http://localhost:4000/post-images/1587087523215.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="http://localhost:4000/post-images/1587087458844.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>d、 自动识别项目，填写名称，该名称就是给出网址的二级域名，其他无需更改，直接点击确认。<br>
+<img src="http://localhost:4000/post-images/1587096508631.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>e、部署成功后，就给出访问网址，填写到之前应用授权处。</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="10"><img src="http://localhost:4000/post-images/1587087616891.png" alt="" loading="lazy"></figure>
+<h2 id="2githubgithub-page部署">（2）github+github Page部署</h2>
+<ul>
+<li>a、拉取博主github上传编译好的网页文件：网址为：github.com/setdiaoyong/setdiaoyong.github.io (手动复制到浏览器）</li>
+</ul>
+<figure data-type="image" tabindex="11"><img src="http://localhost:4000/post-images/1587087673518.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>b、在github网页中打开static\js，分别搜索main.b09a1c35.chunk.js和main.b09a1c35.chunk.js.map ，打开后，点击右上角笔图标，进行编辑，分别搜索 {授权appID} ，将 {授权appID}  连 {}挂号 一起替换成至自己设置好的app ID<br>
+<img src="http://localhost:4000/post-images/1587087271380.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>c、修改库名为：自己github用户名.github.io</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="12"><img src="http://localhost:4000/post-images/1587087703757.png" alt="" loading="lazy"></figure>
+<ul>
+<li>d、修改好，滚动本页到下方，可以看到，访问地址，即可访问</li>
+</ul>
+<figure data-type="image" tabindex="13"><img src="http://localhost:4000/post-images/1587087873568.png" alt="" loading="lazy"></figure>
+<p>##（3）自由空间域名部署及设置参照github page部署方法</p>
+<h1 id="访问网页">访问网页</h1>
+<ul>
+<li>a、在浏览器隐私模式中（防止自动登录影响），访问部署成功的网址</li>
+</ul>
+<figure data-type="image" tabindex="14"><img src="http://localhost:4000/post-images/1587087924283.png" alt="" loading="lazy"></figure>
+<ul>
+<li>b、登录账户，不报错，不闪退，跳转进入如下界面</li>
+</ul>
+<figure data-type="image" tabindex="15"><img src="http://localhost:4000/post-images/1587087952044.png" alt="" loading="lazy"></figure>
+<ul>
+<li>c、创建一个meeting，此次省略截图，完成调用，也继续可跳转到web端的team视频会议软件体验一下</li>
+</ul>
+<figure data-type="image" tabindex="16"><img src="http://localhost:4000/post-images/1587088091091.png" alt="" loading="lazy"></figure>
+<h1 id="问题解决">问题解决</h1>
+<ul>
+<li>a、关键是授权设置，注意用设置登录类型范围内的账户登录，</li>
+<li>b、如果登录报错，要看具体错误类型，再回去修改授权，未设置好Redirect URIs，会提示Redirect URIs不符合</li>
+<li>c、如果登录闪退，隐式授权access token 和ID token 未勾选</li>
+</ul>
+<p>注：感谢浅忆博客-E5技术交流群的群友：<strong>别恋</strong>，<strong>流浪</strong> 提供了反馈。</p>
+<h1 id="邀请他人注册调用的授权设置官方已对e5开发者订阅完全限制只能组织内子账号调用部署的应用">邀请他人注册调用的授权设置（官方已对E5开发者订阅完全限制，只能组织内子账号调用部署的应用）</h1>
+<h2 id="1管理员中心设置允许非管理员用户添加官方已上线">1.管理员中心设置允许非管理员用户添加（官方已上线）</h2>
+<p><s>（官方preview）<br>
+官方还在开发，设置后无法保存。</s>~~<br>
+<img src="http://localhost:4000/post-images/1587295592959.png" alt="" loading="lazy">~~<br>
+2020/10/31更新<br>
+官方已上线了🏳️‍🌈🏳️‍🌈🏳️‍🌈<br>
+<img src="http://localhost:4000/post-images/1604075825809.png" alt="" loading="lazy"></p>
+<h2 id="2管理员登录特定网址授权作废官方提供设置了"><s>2.管理员登录特定网址授权（作废，官方提供设置了）</s></h2>
+<ul>
+<li>a、子账号登录他人部署的应用，会报出需要管理员授权<br>
+<img src="http://localhost:4000/post-images/1587091316482.png" alt="" loading="lazy"></li>
+<li>b、可以从要登录应用跳转的微软sigin in界面复制网址来提取登录应用id和redirect_uri：<br>
+<img src="http://localhost:4000/post-images/1587086688972.png" alt="提取信息" loading="lazy"></li>
+<li>c、将提取的应用id和redirect_uri替换以下网址的部分：login.microsoftonline.com/common/adminconsent?client_id=要登录的应用ID&amp;redirect_uri=要登录应用的跳转地址</li>
+<li>d、 将替换好的网址复制到浏览器 .<br>
+参见<a href="https://docs.microsoft.com/zh-CN/microsoft-365/admin/add-users/about-admin-roles?WT.mc_id=365AdminCSH&amp;view=o365-worldwide">官方文档1</a>，<a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant" title="官方文档2">官方文档2</a>、<a href="https://docs.microsoft.com/zh-cn/graph/permissions-reference" title="官方文档3">官方文档3</a>、<a href="https://docs.microsoft.com/zh-cn/graph/auth-cloudsolutionprovider" title="官方文档4*">官方文档4*</a></li>
+<li>e、修改好，用管理员账号登录，接受应用需要的授权，然后在azure中修改：<br>
+<img src="http://localhost:4000/post-images/1587092151066.png" alt="" loading="lazy"></li>
+<li>f、打开组织应用<br>
+<img src="http://localhost:4000/post-images/1587092143391.png" alt="" loading="lazy"></li>
+<li>g、打开所有应用，搜索之前记录的他人应用名<br>
+<img src="http://localhost:4000/post-images/1587092163163.png" alt="" loading="lazy"></li>
+<li>h、以自己部署的为例，需要更换为在所有应用中搜索，我部署的应用名为teamstudy。<br>
+<img src="http://localhost:4000/post-images/1587092135736.png" alt="" loading="lazy"></li>
+<li>i、点击添加用户，此处已有的一个用户为管理员<br>
+<img src="http://localhost:4000/post-images/1587092113693.png" alt="" loading="lazy"></li>
+<li>j、添加允许登录的子账号<br>
+<img src="http://localhost:4000/post-images/1587092106702.png" alt="" loading="lazy"></li>
+<li>k、删除管理员授权，保证安全<br>
+<img src="http://localhost:4000/post-images/1587092099707.png" alt="" loading="lazy"></li>
+</ul>
+<h1 id="未来计划">未来计划</h1>
+<p><strong>（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度</strong></p>
+<p><strong>（2）已检测，官方已忽略，不会识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
+<p><strong>（3）网上有提到，绑定自己的域名，有可能更容易保活</strong></p>
+<p><strong>（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活</strong></p>
+<p><strong>续订随缘</strong></p>
+]]></content>
+    </entry>
+</feed>
