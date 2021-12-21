@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://blog.stormkit.dev</id>
     <title>凤梧山居</title>
-    <updated>2021-12-21T04:47:38.871Z</updated>
+    <updated>2021-12-21T05:21:03.826Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://blog.stormkit.dev"/>
+    <link rel="self" href="https://blog.stormkit.dev/atom.xml"/>
     <subtitle>大隐于市者，能</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://blog.stormkit.dev/images/avatar.png</logo>
+    <icon>https://blog.stormkit.dev/favicon.ico</icon>
     <rights>All rights reserved 2021, 凤梧山居</rights>
     <entry>
         <title type="html"><![CDATA[免费导航站部署资源收集]]></title>
-        <id>http://localhost:4000/post/dkM1P9Ma1/</id>
-        <link href="http://localhost:4000/post/dkM1P9Ma1/">
+        <id>https://blog.stormkit.dev/dkM1P9Ma1/</id>
+        <link href="https://blog.stormkit.dev/dkM1P9Ma1/">
         </link>
         <updated>2020-10-30T18:45:33.000Z</updated>
         <content type="html"><![CDATA[<p>1、源代码列表<br>
 1.1 静态导航站源代码<br>
-1）<img src="http://localhost:4000/post-images/1604084069312.ico" alt="" loading="lazy">猿梦极客导航https://github.com/geekape/geek-navigation/tree/json-navigation</p>
+1）<img src="https://blog.stormkit.dev/post-images/1604084069312.ico" alt="" loading="lazy">猿梦极客导航https://github.com/geekape/geek-navigation/tree/json-navigation</p>
 <p>2、免费部署资源</p>
 <p>1）https://vercel.com/</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[配置华为云]]></title>
-        <id>http://localhost:4000/post/tNkyvNpJT/</id>
-        <link href="http://localhost:4000/post/tNkyvNpJT/">
+        <id>https://blog.stormkit.dev/tNkyvNpJT/</id>
+        <link href="https://blog.stormkit.dev/tNkyvNpJT/">
         </link>
         <updated>2020-05-25T15:54:47.000Z</updated>
         <content type="html"><![CDATA[<p>下载XShell<br>
@@ -62,8 +62,8 @@ https://docs.cloudreve.org/</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[IDM定时探嗅oneindex站点，调用api]]></title>
-        <id>http://localhost:4000/post/pVvhUoSzv/</id>
-        <link href="http://localhost:4000/post/pVvhUoSzv/">
+        <id>https://blog.stormkit.dev/pVvhUoSzv/</id>
+        <link href="https://blog.stormkit.dev/pVvhUoSzv/">
         </link>
         <updated>2020-04-22T03:28:49.000Z</updated>
         <content type="html"><![CDATA[<p>IDM定时探嗅oneindex站点，调用api</p>
@@ -71,8 +71,8 @@ https://docs.cloudreve.org/</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[（非专业操作）免费空间维持oneindex 长期授权的缓存设置]]></title>
-        <id>http://localhost:4000/post/dMbiPACR5/</id>
-        <link href="http://localhost:4000/post/dMbiPACR5/">
+        <id>https://blog.stormkit.dev/dMbiPACR5/</id>
+        <link href="https://blog.stormkit.dev/dMbiPACR5/">
         </link>
         <updated>2020-04-17T14:14:11.000Z</updated>
         <summary type="html"><![CDATA[<p>小白，在度娘里也没找准针对性文章，瞎填，但已经维持一段时间不失效了，希望是瞎猫碰上死耗子，一直维持下去。</p>
@@ -83,14 +83,14 @@ https://docs.cloudreve.org/</p>
 <p>-1、gearhost免费空间部署了oneindex，但是不会设置自动刷新缓存，只能手动访问链接，检测失效，以及手动进后台重建缓存，刷新refresh token，才能重新访问onedrive。</p>
 <p>-2、从群友那讨来的一元免费空间，部署了oneindex，不会设置刷新，过一段时间也无法访问。</p>
 <h1 id="在后台瞎设置"><strong>在后台瞎设置</strong></h1>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1587212919814.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://blog.stormkit.dev/post-images/1587212919814.png" alt="" loading="lazy"></figure>
 <p>3、（2020/10/31更新）infinityfree免费主机，可配置定时任务，5秒真男人，刷新oneindex，还能有3个月的ssl。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Office 365 team API可无设备，无域名部署，以非组织内部用户调用保活]]></title>
-        <id>http://localhost:4000/post/mYQjpWO-3/</id>
-        <link href="http://localhost:4000/post/mYQjpWO-3/">
+        <id>https://blog.stormkit.dev/mYQjpWO-3/</id>
+        <link href="https://blog.stormkit.dev/mYQjpWO-3/">
         </link>
         <updated>2020-04-17T00:39:54.000Z</updated>
         <summary type="html"><![CDATA[<p><strong>拜请诸方大佬，各显神通，有缘续订</strong><br>
@@ -165,94 +165,94 @@ https://docs.cloudreve.org/</p>
 <p>参考原官方项目说明，网址为：github.com/OfficeDev/msteams-app-lms-meetings (手动复制到浏览器）</p>
 <p>个人设置截图如下：（2020/10/31开始更新，微软重构了Azure portal的界面，有点不一样了，后面有空再更新，之前无法设置组织内用户添加组织外应用，现在上线啦，感觉我的这个方法可能更有前途，多找一些人，使用自己上线的这team中转应用，其实就是个官方示例的开始界面《手动捂脸》）</p>
 <p>-（1）在 <a href="https://portal.azure.com/">Azure portal</a> 注册应用并授权API<br>
-<img src="http://localhost:4000/post-images/1587086835316.png" alt="" loading="lazy"></p>
+<img src="https://blog.stormkit.dev/post-images/1587086835316.png" alt="" loading="lazy"></p>
 <ul>
 <li>a、 起名，授权登录用户类型（此用户类型选择好后，以后不能改，微软个人账号只能登录，无法创建会议，推荐选2供自己组织和其他组织使用，方便找其他人登录调用），跳转地址Redirect URIs填 https://localhost:3000/（http后s最好加）</li>
 </ul>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1587086887866.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://blog.stormkit.dev/post-images/1587086887866.png" alt="" loading="lazy"></figure>
 <ul>
 <li>b、如下图，填4个地方：1、Redirect URIs中填https://localhost:3000/（http后s最好加，上一步已填好）；2、Redirect URIs再点击 add URL填上自己要部署https网址，如我的https://teamstudy.onrender.com/（以后可修改，或等render给出网址再添加填写），或部署在githubpage，就填github page唯一网址：https://&lt;自己用户名&gt;.github.io（必须有ssl认证的https连接），3、Logout URL填 https://localhost:3000/（http后必须加s），4、勾选隐式授权access token，ID token。</li>
 </ul>
-<p><img src="http://localhost:4000/post-images/1587086915551.png" alt="" loading="lazy"><br>
+<p><img src="https://blog.stormkit.dev/post-images/1587086915551.png" alt="" loading="lazy"><br>
 源代码中有退出跳转网址路径<br>
-<img src="http://localhost:4000/post-images/1587087829180.png" alt="" loading="lazy"></p>
+<img src="https://blog.stormkit.dev/post-images/1587087829180.png" alt="" loading="lazy"></p>
 <ul>
 <li>c、复制应用ID，待用，进入API授权设置</li>
 </ul>
-<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1587086943633.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://blog.stormkit.dev/post-images/1587086943633.png" alt="" loading="lazy"></figure>
 <ul>
 <li>d、设置用户调用api，搜索online，选择readwrite权限</li>
 </ul>
-<figure data-type="image" tabindex="3"><img src="http://localhost:4000/post-images/1587087016393.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://blog.stormkit.dev/post-images/1587087016393.png" alt="" loading="lazy"></figure>
 <ul>
 <li>e、根据个人使用账户权限，可能要管理员授权使用该API，可以在右上角切换管理员账户，</li>
 </ul>
-<figure data-type="image" tabindex="4"><img src="http://localhost:4000/post-images/1587087033373.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://blog.stormkit.dev/post-images/1587087033373.png" alt="" loading="lazy"></figure>
 <ul>
 <li>f、点击进行管理员授权</li>
 </ul>
-<p><img src="http://localhost:4000/post-images/1587087047023.png" alt="" loading="lazy"><br>
+<p><img src="https://blog.stormkit.dev/post-images/1587087047023.png" alt="" loading="lazy"><br>
 -（额外提示）一个ID可以对应多个自己部署的https:域名，在web （经群友<strong>别恋</strong>验证）</p>
-<figure data-type="image" tabindex="5"><img src="http://localhost:4000/post-images/1587087067227.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://blog.stormkit.dev/post-images/1587087067227.png" alt="" loading="lazy"></figure>
 <h1 id="网页部署">网页部署</h1>
 <h2 id="1githubrender在线编译部署">（1）github+render在线编译部署</h2>
 <ul>
 <li>a、 拉取官方项目库</li>
 </ul>
-<figure data-type="image" tabindex="6"><img src="http://localhost:4000/post-images/1587087158259.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://blog.stormkit.dev/post-images/1587087158259.png" alt="" loading="lazy"></figure>
 <ul>
 <li>b、 找到文件，点击修改， 修改成自己的应用ID<br>
-<img src="http://localhost:4000/post-images/1587095993662.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587095993662.png" alt="" loading="lazy"></li>
 </ul>
-<figure data-type="image" tabindex="7"><img src="http://localhost:4000/post-images/1587087385884.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://blog.stormkit.dev/post-images/1587087385884.png" alt="" loading="lazy"></figure>
 <ul>
 <li>c、 用拉取的github账号登录render, 创建web空间，选择修改好应用ID的自己github库</li>
 </ul>
-<figure data-type="image" tabindex="8"><img src="http://localhost:4000/post-images/1587087523215.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="9"><img src="http://localhost:4000/post-images/1587087458844.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://blog.stormkit.dev/post-images/1587087523215.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://blog.stormkit.dev/post-images/1587087458844.png" alt="" loading="lazy"></figure>
 <ul>
 <li>
 <p>d、 自动识别项目，填写名称，该名称就是给出网址的二级域名，其他无需更改，直接点击确认。<br>
-<img src="http://localhost:4000/post-images/1587096508631.png" alt="" loading="lazy"></p>
+<img src="https://blog.stormkit.dev/post-images/1587096508631.png" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>e、部署成功后，就给出访问网址，填写到之前应用授权处。</p>
 </li>
 </ul>
-<figure data-type="image" tabindex="10"><img src="http://localhost:4000/post-images/1587087616891.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://blog.stormkit.dev/post-images/1587087616891.png" alt="" loading="lazy"></figure>
 <h2 id="2githubgithub-page部署">（2）github+github Page部署</h2>
 <ul>
 <li>a、拉取博主github上传编译好的网页文件：网址为：github.com/setdiaoyong/setdiaoyong.github.io (手动复制到浏览器）</li>
 </ul>
-<figure data-type="image" tabindex="11"><img src="http://localhost:4000/post-images/1587087673518.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://blog.stormkit.dev/post-images/1587087673518.png" alt="" loading="lazy"></figure>
 <ul>
 <li>
 <p>b、在github网页中打开static\js，分别搜索main.b09a1c35.chunk.js和main.b09a1c35.chunk.js.map ，打开后，点击右上角笔图标，进行编辑，分别搜索 {授权appID} ，将 {授权appID}  连 {}挂号 一起替换成至自己设置好的app ID<br>
-<img src="http://localhost:4000/post-images/1587087271380.png" alt="" loading="lazy"></p>
+<img src="https://blog.stormkit.dev/post-images/1587087271380.png" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>c、修改库名为：自己github用户名.github.io</p>
 </li>
 </ul>
-<figure data-type="image" tabindex="12"><img src="http://localhost:4000/post-images/1587087703757.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://blog.stormkit.dev/post-images/1587087703757.png" alt="" loading="lazy"></figure>
 <ul>
 <li>d、修改好，滚动本页到下方，可以看到，访问地址，即可访问</li>
 </ul>
-<figure data-type="image" tabindex="13"><img src="http://localhost:4000/post-images/1587087873568.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://blog.stormkit.dev/post-images/1587087873568.png" alt="" loading="lazy"></figure>
 <p>##（3）自由空间域名部署及设置参照github page部署方法</p>
 <h1 id="访问网页">访问网页</h1>
 <ul>
 <li>a、在浏览器隐私模式中（防止自动登录影响），访问部署成功的网址</li>
 </ul>
-<figure data-type="image" tabindex="14"><img src="http://localhost:4000/post-images/1587087924283.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://blog.stormkit.dev/post-images/1587087924283.png" alt="" loading="lazy"></figure>
 <ul>
 <li>b、登录账户，不报错，不闪退，跳转进入如下界面</li>
 </ul>
-<figure data-type="image" tabindex="15"><img src="http://localhost:4000/post-images/1587087952044.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://blog.stormkit.dev/post-images/1587087952044.png" alt="" loading="lazy"></figure>
 <ul>
 <li>c、创建一个meeting，此次省略截图，完成调用，也继续可跳转到web端的team视频会议软件体验一下</li>
 </ul>
-<figure data-type="image" tabindex="16"><img src="http://localhost:4000/post-images/1587088091091.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="https://blog.stormkit.dev/post-images/1587088091091.png" alt="" loading="lazy"></figure>
 <h1 id="问题解决">问题解决</h1>
 <ul>
 <li>a、关键是授权设置，注意用设置登录类型范围内的账户登录，</li>
@@ -264,33 +264,33 @@ https://docs.cloudreve.org/</p>
 <h2 id="1管理员中心设置允许非管理员用户添加官方已上线">1.管理员中心设置允许非管理员用户添加（官方已上线）</h2>
 <p><s>（官方preview）<br>
 官方还在开发，设置后无法保存。</s>~~<br>
-<img src="http://localhost:4000/post-images/1587295592959.png" alt="" loading="lazy">~~<br>
+<img src="https://blog.stormkit.dev/post-images/1587295592959.png" alt="" loading="lazy">~~<br>
 2020/10/31更新<br>
 官方已上线了🏳️‍🌈🏳️‍🌈🏳️‍🌈<br>
-<img src="http://localhost:4000/post-images/1604075825809.png" alt="" loading="lazy"></p>
+<img src="https://blog.stormkit.dev/post-images/1604075825809.png" alt="" loading="lazy"></p>
 <h2 id="2管理员登录特定网址授权作废官方提供设置了"><s>2.管理员登录特定网址授权（作废，官方提供设置了）</s></h2>
 <ul>
 <li>a、子账号登录他人部署的应用，会报出需要管理员授权<br>
-<img src="http://localhost:4000/post-images/1587091316482.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587091316482.png" alt="" loading="lazy"></li>
 <li>b、可以从要登录应用跳转的微软sigin in界面复制网址来提取登录应用id和redirect_uri：<br>
-<img src="http://localhost:4000/post-images/1587086688972.png" alt="提取信息" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587086688972.png" alt="提取信息" loading="lazy"></li>
 <li>c、将提取的应用id和redirect_uri替换以下网址的部分：login.microsoftonline.com/common/adminconsent?client_id=要登录的应用ID&amp;redirect_uri=要登录应用的跳转地址</li>
 <li>d、 将替换好的网址复制到浏览器 .<br>
 参见<a href="https://docs.microsoft.com/zh-CN/microsoft-365/admin/add-users/about-admin-roles?WT.mc_id=365AdminCSH&amp;view=o365-worldwide">官方文档1</a>，<a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-convert-app-to-be-multi-tenant" title="官方文档2">官方文档2</a>、<a href="https://docs.microsoft.com/zh-cn/graph/permissions-reference" title="官方文档3">官方文档3</a>、<a href="https://docs.microsoft.com/zh-cn/graph/auth-cloudsolutionprovider" title="官方文档4*">官方文档4*</a></li>
 <li>e、修改好，用管理员账号登录，接受应用需要的授权，然后在azure中修改：<br>
-<img src="http://localhost:4000/post-images/1587092151066.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092151066.png" alt="" loading="lazy"></li>
 <li>f、打开组织应用<br>
-<img src="http://localhost:4000/post-images/1587092143391.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092143391.png" alt="" loading="lazy"></li>
 <li>g、打开所有应用，搜索之前记录的他人应用名<br>
-<img src="http://localhost:4000/post-images/1587092163163.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092163163.png" alt="" loading="lazy"></li>
 <li>h、以自己部署的为例，需要更换为在所有应用中搜索，我部署的应用名为teamstudy。<br>
-<img src="http://localhost:4000/post-images/1587092135736.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092135736.png" alt="" loading="lazy"></li>
 <li>i、点击添加用户，此处已有的一个用户为管理员<br>
-<img src="http://localhost:4000/post-images/1587092113693.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092113693.png" alt="" loading="lazy"></li>
 <li>j、添加允许登录的子账号<br>
-<img src="http://localhost:4000/post-images/1587092106702.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092106702.png" alt="" loading="lazy"></li>
 <li>k、删除管理员授权，保证安全<br>
-<img src="http://localhost:4000/post-images/1587092099707.png" alt="" loading="lazy"></li>
+<img src="https://blog.stormkit.dev/post-images/1587092099707.png" alt="" loading="lazy"></li>
 </ul>
 <h1 id="未来计划">未来计划</h1>
 <p><strong>（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度</strong></p>
