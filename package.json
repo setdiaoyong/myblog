@@ -1,6 +1,26 @@
 {
- "name": "myblog"
- "version": "1.0.0",
-  "description": "myblog",
-   "private": true,
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "myblog project",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "test": "npm run unit",
+    "lint": "eslint --ext .js,.vue src test/unit",
+    "build": "node build/build.js"
+  },
+  "dependencies": {
+    "vue": "^2.5.2"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    
+  },
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 3.0.0"
+  },
 }
