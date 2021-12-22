@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.stormkit.dev</id>
     <title>凤梧山居</title>
-    <updated>2021-12-22T17:11:20.233Z</updated>
+    <updated>2021-12-22T18:50:05.931Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.stormkit.dev"/>
     <link rel="self" href="https://blog.stormkit.dev/atom.xml"/>
@@ -88,7 +88,8 @@ cloudreve.db 为数据库文件</p>
 <figure data-type="image" tabindex="7"><img src="https://blog.stormkit.dev/post-images/1640191167382.jpg" alt="" loading="lazy"></figure>
 <h2 id="访问二级域名用ssh中初始管理员账号密码登录">访问二级域名，用ssh中初始管理员账号密码登录</h2>
 <figure data-type="image" tabindex="8"><img src="https://blog.stormkit.dev/post-images/1640191434657.jpg" alt="" loading="lazy"></figure>
-<h2 id="具体使用看cloudreve文档httpsdocscloudreveorg">具体使用看cloudreve文档：<a href="https://docs.cloudreve.org/">https://docs.cloudreve.org/</a></h2>
+<h2 id="具体使用参照cloudreve文档httpsdocscloudreveorg">具体使用，参照cloudreve文档：<a href="https://docs.cloudreve.org/">https://docs.cloudreve.org/</a></h2>
+<p><strong>如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励</strong></p>
 ]]></content>
     </entry>
     <entry>
@@ -135,15 +136,7 @@ cloudreve.db 为数据库文件</p>
 <img src="https://blog.stormkit.dev/post-images/1640185085924.jpg" alt="" loading="lazy"><br>
 成功https访问<br>
 <img src="https://blog.stormkit.dev/post-images/1640185166422.jpg" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[IDM定时探嗅oneindex站点，调用api]]></title>
-        <id>https://blog.stormkit.dev/pVvhUoSzv/</id>
-        <link href="https://blog.stormkit.dev/pVvhUoSzv/">
-        </link>
-        <updated>2020-04-22T03:28:49.000Z</updated>
-        <content type="html"><![CDATA[<p>IDM定时探嗅oneindex站点，调用api</p>
+<p><strong>如果觉得本文对您有所帮助，请点击<em>￥赞赏￥</em>按钮，为作者原创加油鼓励</strong></p>
 ]]></content>
     </entry>
     <entry>
@@ -357,6 +350,20 @@ cloudreve.db 为数据库文件</p>
 <p><strong>（3）网上有提到，绑定自己的域名，有可能更容易保活</strong></p>
 <p><strong>（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活</strong></p>
 <p><strong>续订随缘</strong></p>
+<p><strong>如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励</strong></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://blog.stormkit.dev/about/</id>
+        <link href="https://blog.stormkit.dev/about/">
+        </link>
+        <updated>2019-01-25T11:09:48.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<!-- more -->
+<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
 ]]></content>
     </entry>
 </feed>

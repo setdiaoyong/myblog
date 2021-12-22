@@ -2051,12 +2051,12 @@ p > code {
 body {
       background-color: #eee;
     }.header {
-        width: 960px;
+        width: 1260px;
         margin: 0 auto;
       }
 
       .main-continer {
-        width: 960px;
+        width: 1260px;
         margin: 0 auto;
       }
     
@@ -2089,11 +2089,11 @@ body {
     .node-title::before {
       background-color: #555;
     }a {
-      color: #3b5bdb;
+      color: #364fc7;
     }
     
     .next-md-body a, .friends-box a  {
-      color: #3b5bdb;
+      color: #364fc7;
     }a:hover {
       color: #f03e3e;
     }
@@ -2158,7 +2158,9 @@ body {
     .active-hidden > a {
       color: #f03e3e;
       border-bottom-color: #f03e3e;
-    }.bg-color {
+    }.reward-btn-text {
+        background-color: #4263ebfe !important;
+      }.bg-color {
       background-color: #fffffffe;
     }
     .site-meta {
@@ -2173,7 +2175,7 @@ body {
     
       .brand {
         font-weight: bold;
-        transform: scale(1);
+        transform: scale(1.5);
       }.main-title, .brand {
       color: #FFF !important;
     }
@@ -2181,8 +2183,6 @@ body {
       background: #FFFFFFfe;
     }.box-scale > #landlord {
       transform: scale(0.4);
-    }.box-shadow-wrapper {
-      box-shadow: none !important;
     }body {
       cursor: default;
     }a {

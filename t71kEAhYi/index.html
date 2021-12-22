@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="Gridea静态个人博客">
+<meta name="keywords" content="山人妙计馆">
 <meta name="description" content="大隐于市者，能">
 <meta name="theme-color" content="#000">
 <title>凤梧山居</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1640193070554">
-<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="shortcut icon" href="/favicon.ico?v=1640199000521">
+<link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
   href="//fonts.loli.net/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
@@ -67,7 +67,7 @@
   <div class="head-top-line"></div>
   <div class="header-box">
     
-<div class="pisces">
+<div class="gemini">
   <header class="header  ">
     <div class="blog-header box-shadow-wrapper bg-color " id="header">
       <div class="nav-toggle" id="nav_toggle">
@@ -197,7 +197,7 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  pisces">
+      class="section-layout  gemini">
       <div class="section-layout-wrapper">
         <div id="sidebarMeta" class="sidebar">
     
@@ -237,7 +237,7 @@
       <div class="social-item">
         
           
-            <a href="https://github.com/setdiaoyong">
+            <a href="https://github.com/aifact">
               <i class="fa fa-github-alt" title="GitHub"></i>
             </a>
           
@@ -253,11 +253,16 @@
 
 
 
+  <div style="width: 100%; position: relative;">
+    <canvas id="canvasDiyBlock" style="width:100%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+    <script src="/media/js/magic/clock.js"></script>
+  </div>
+
 </div>
 </div>
 <script>
   let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
+  let scheme = 'gemini';
   let sidebarWrapper = document.querySelector('.sidebar-wrapper');
   if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
     document.addEventListener('scroll', function(e) {
@@ -280,8 +285,6 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
-      
-      
       
       
       
@@ -321,7 +324,7 @@
     <span id="busuanzi_container_site_uv">访客数:<span id="busuanzi_value_site_uv"></span> 人</span>
 
     <script>
-      BirthDay = new Date('');
+      BirthDay = new Date('2019年12月1日');
       if (BirthDay.getTime()) {
         function runTime() {
           str = "";
@@ -346,7 +349,7 @@
   </footer>
   
     
-        <div class="pisces back-to-top" id="back_to_top">
+        <div class="gemini back-to-top" id="back_to_top">
           <i class="fa fa-arrow-up"></i>
           
             <span class="scrollpercent"> <span id="back_to_top_text">0</span>% </span>
@@ -356,7 +359,7 @@
           
             
               <div class="bg-img">
-                <img src="/media/images/1.jpg" />
+                <img src="/media/images/1.jpeg" />
               </div>
               
                 
@@ -905,48 +908,6 @@
 </script>
                       
                         
-                          
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <div class="aplayer" id="aplayer"></div>
-  <script>
-  let musics = JSON.parse('[{"author":"隔壁老樊","lrc":"","musicLink":"http://sharepan.epizy.com/woceng.mp3","musicName":"我曾"}]');
-  let mediaMusic = [];
-  for (let i = 0; i < musics.length; i++) {
-    let item = musics[i];
-    mediaMusic.push({
-      name: item.musicName,
-      artist: item.author,
-      url: item.musicLink,
-      lrc: item.lrc,
-      cover: item.cover
-    });
-  }
-
-  const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      lrcType: 3,
-      listFolded: false,
-      listMaxHeight: 90,
-      audio: mediaMusic
-  });
-  window.addEventListener('load', function() {
-    let postBody = document.querySelector('#post_body');
-    let hs = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    postBody && hs.forEach(h => {
-      let helems = postBody.querySelectorAll(h);
-      if (helems.length > 0) {
-        helems.forEach(elem => {
-          elem.id = encodeURI(elem.id);
-        })
-      }
-    })
-  })
-  </script>
-
-
-                            
 </div>
 <script>
   let sideBarOpen = "sidebar-open";
@@ -1236,7 +1197,8 @@ cloudreve.db 为数据库文件&lt;/p&gt;
 &lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;https://blog.stormkit.dev/post-images/1640191167382.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;访问二级域名用ssh中初始管理员账号密码登录&#34;&gt;访问二级域名，用ssh中初始管理员账号密码登录&lt;/h2&gt;
 &lt;figure data-type=&#34;image&#34; tabindex=&#34;8&#34;&gt;&lt;img src=&#34;https://blog.stormkit.dev/post-images/1640191434657.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;具体使用看cloudreve文档httpsdocscloudreveorg&#34;&gt;具体使用看cloudreve文档：&lt;a href=&#34;https://docs.cloudreve.org/&#34;&gt;https://docs.cloudreve.org/&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;具体使用参照cloudreve文档httpsdocscloudreveorg&#34;&gt;具体使用，参照cloudreve文档：&lt;a href=&#34;https://docs.cloudreve.org/&#34;&gt;https://docs.cloudreve.org/&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励&lt;/strong&gt;&lt;/p&gt;
 ">无验证的alwaysdata部署go版的cloudreve云盘程序，直链微软SP、OD</a>
       </div>
       
@@ -1280,13 +1242,8 @@ cloudreve.db 为数据库文件&lt;/p&gt;
 &lt;img src=&#34;https://blog.stormkit.dev/post-images/1640185085924.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
 成功https访问&lt;br&gt;
 &lt;img src=&#34;https://blog.stormkit.dev/post-images/1640185166422.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果觉得本文对您有所帮助，请点击&lt;em&gt;￥赞赏￥&lt;/em&gt;按钮，为作者原创加油鼓励&lt;/strong&gt;&lt;/p&gt;
 ">无验证的100mb 免费全能空间alwaysdata的注册与配置免费二级域名ssl</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://blog.stormkit.dev/pVvhUoSzv/"" data-c="
-          &lt;p&gt;IDM定时探嗅oneindex站点，调用api&lt;/p&gt;
-">IDM定时探嗅oneindex站点，调用api</a>
       </div>
       
       <div class="item">
@@ -1492,20 +1449,17 @@ cloudreve.db 为数据库文件&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;（3）网上有提到，绑定自己的域名，有可能更容易保活&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;续订随缘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励&lt;/strong&gt;&lt;/p&gt;
 ">Office 365 team API可无设备，无域名部署，以非组织内部用户调用保活</a>
       </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.stormkit.dev/about/"" data-c="
-          &lt;blockquote&gt;
+          &lt;!-- more --&gt;
+&lt;!-- more --&gt;
+&lt;blockquote&gt;
 &lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
-&lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
-&lt;p&gt;我是谁，我在哪里&lt;/p&gt;
-&lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
-&lt;p&gt;搞机&lt;/p&gt;
-&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
 ">关于</a>
       </div>
       
@@ -1793,19 +1747,20 @@ cloudreve.db 为数据库文件&lt;/p&gt;
 <script src="/media/js/motion.js"></script>
 
 
+  <script
+    src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      speed: 200
+    });
+  </script>
 
 
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-<script type="text/javascript" src="/media/js/mouse/fireworks.js"></script>
 
-
-  <script src="/media/js/cool.js"></script>
+<script src="/media/js/mouse/love.js"></script>
 
 
 
-  <div class="snow-container"></div>
-  <script color="0,205,205" pointer-events="auto" zIndex="-1" opacity='0.7' count="99" src="/media/js/bg/canvas-nest.js"></script>
 
 
 </html>
