@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://enblog.netlify.app</id>
     <title>凤梧山居</title>
-    <updated>2021-12-22T20:27:23.025Z</updated>
+    <updated>2021-12-22T21:13:19.073Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://enblog.netlify.app"/>
     <link rel="self" href="https://enblog.netlify.app/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://enblog.netlify.app/qfX1_b_ai/">
         </link>
         <updated>2021-12-22T15:01:17.000Z</updated>
-        <content type="html"><![CDATA[<p>先阅读上一篇<a href="https://blog.stormkit.dev/nKOi9H1cL/">《无验证的100mb 免费全能空间alwaysdata的注册与配置免费二级域名ssl》</a></p>
+        <content type="html"><![CDATA[<p>先阅读上一篇[《无验证的100mb 免费全能空间alwaysdata的注册与配置免费二级域名ssl》]（https://enblog.netlify.app/nKOi9H1cL/)</p>
 <h1 id="cloudreve简介">cloudreve简介</h1>
 <p>cloudreve项目主页：<a href="http://cloudreve.org/">http://cloudreve.org/</a><br>
 cloudreve源代码地址：<a href="https://github.com/cloudreve/Cloudreve/releases">https://github.com/cloudreve/Cloudreve/releases</a><br>
@@ -89,6 +89,7 @@ cloudreve.db 为数据库文件</p>
 <h2 id="访问二级域名用ssh中初始管理员账号密码登录">访问二级域名，用ssh中初始管理员账号密码登录</h2>
 <figure data-type="image" tabindex="8"><img src="https://enblog.netlify.app/post-images/1640191434657.jpg" alt="" loading="lazy"></figure>
 <h2 id="具体使用参照cloudreve文档httpsdocscloudreveorg">具体使用，参照cloudreve文档：<a href="https://docs.cloudreve.org/">https://docs.cloudreve.org/</a></h2>
+<h1 id="赞赏支持作者">赞赏，支持作者</h1>
 <p><strong>如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励</strong></p>
 ]]></content>
     </entry>
@@ -136,6 +137,7 @@ cloudreve.db 为数据库文件</p>
 <img src="https://enblog.netlify.app/post-images/1640185085924.jpg" alt="" loading="lazy"><br>
 成功https访问<br>
 <img src="https://enblog.netlify.app/post-images/1640185166422.jpg" alt="" loading="lazy"></p>
+<h1 id="赞赏支持作者">赞赏，支持作者</h1>
 <p><strong>如果觉得本文对您有所帮助，请点击<em>￥赞赏￥</em>按钮，为作者原创加油鼓励</strong></p>
 ]]></content>
     </entry>
@@ -345,11 +347,12 @@ cloudreve.db 为数据库文件</p>
 <img src="https://enblog.netlify.app/post-images/1587092099707.png" alt="" loading="lazy"></li>
 </ul>
 <h1 id="未来计划">未来计划</h1>
-<p><strong>（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度</strong></p>
-<p><strong>（2）已检测，官方已忽略，不会识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></p>
-<p><strong>（3）网上有提到，绑定自己的域名，有可能更容易保活</strong></p>
-<p><strong>（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活</strong></p>
+<p><s><strong>（1）周期性定时邮件及本地客户端自动回复维持子账号电子邮件活跃度，可能没有权重</strong></s></p>
+<p><s><strong>（2）已检测，官方可能已忽略，不会识别为用户活跃——微软自动化工作流软件Power Automate提高子账号活跃度。<a href="https://docs.microsoft.com/zh-cn/learn/modules/get-started-flows/">参考官方学习文档</a>。</strong></s></p>
+<p><s><strong>（3）网上有提到，绑定自己的域名，有可能更容易保活</strong></s></p>
+<p><strong>（4）待实施部署的网址，使用edge，chrome浏览器，登录账号，安装automa插件，设置自动化流程，进行会议的创建</strong>😘</p>
 <p><strong>续订随缘</strong></p>
+<h1 id="赞赏支持作者">赞赏，支持作者</h1>
 <p><strong>如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励</strong></p>
 ]]></content>
     </entry>
