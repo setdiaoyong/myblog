@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.stormkit.dev</id>
     <title>凤梧山居</title>
-    <updated>2021-12-22T18:50:05.931Z</updated>
+    <updated>2021-12-22T19:03:05.439Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.stormkit.dev"/>
     <link rel="self" href="https://blog.stormkit.dev/atom.xml"/>
@@ -351,19 +351,6 @@ cloudreve.db 为数据库文件</p>
 <p><strong>（4）部署的网址，在源代码中，增加当网站渲染后，一段时间，就点击登录按钮，然后使用edge浏览器，自动登录，把部署网址作为主页，只要打开一次edge浏览器，就登录一次，实现保活</strong></p>
 <p><strong>续订随缘</strong></p>
 <p><strong>如果觉得本文对您有所帮助，请点击￥赞赏￥按钮，为作者原创加油鼓励</strong></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于]]></title>
-        <id>https://blog.stormkit.dev/about/</id>
-        <link href="https://blog.stormkit.dev/about/">
-        </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
-<!-- more -->
-<blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
 ]]></content>
     </entry>
 </feed>
