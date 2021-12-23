@@ -2064,30 +2064,30 @@ body {
       font-size: 16px !important
     }
     body {
-      color: #343a40;
+      color: #000;
     }
     .next-md-body {
-      color: #343a40;
+      color: #000;
     }
     .next-md-body h1, .next-md-body h2 {
-      border-bottom-color: #343a40;
+      border-bottom-color: #000;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeeefe;
     }h1, h2, h3, h4, h5, h6 {
-      color: #212529;
+      color: #000;
     }
     
     .archive-timeline-title::before {
-      background-color: #212529;
+      background-color: #000;
     }
     
     .post-title-link::before {
-      background-color: #212529;
+      background-color: #000;
     }
     
     .node-title::before {
-      background-color: #212529;
+      background-color: #000;
     }a {
       color: #364fc7;
     }
@@ -2115,9 +2115,9 @@ body {
       background-color:  !important;
     }
       .nav-item a {
-        color:  #343a40;
+        color:  #000;
       }.nav-item a:hover {
-        color: #212529;
+        color: #000;
       }.nav-item-active {
       background: #f9f9f9fe;
     }
@@ -2189,6 +2189,8 @@ body {
       background: #FFFFFFfe;
     }.box-scale > #landlord {
       transform: scale(0.4);
+    }.box-shadow-wrapper {
+      box-shadow: none !important;
     }body {
       cursor: default;
     }a {
